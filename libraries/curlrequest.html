@@ -368,7 +368,7 @@
 <p>The <code class="docutils literal"><span class="pre">CURLRequest</span></code> class is a lightweight HTTP client based on CURL that allows you to talk to other
 web sites and servers. It can be used to get the contents of a Google search, retrieve a web page or image,
 or communicate with an API, among many other things.</p>
-<p>This class is modeled after the <a class="reference external" href="http://docs.guzzlephp.org/en/latest/">Guzzle HTTP Client</a> library since
+<p>This class is modelled after the <a class="reference external" href="http://docs.guzzlephp.org/en/latest/">Guzzle HTTP Client</a> library since
 it is one of the more widely used libraries. Where possible, the syntax has been kept the same so that if
 your application needs something a little more powerful than what this library provides, you will have
 to change very little to move over to use Guzzle.</p>
@@ -382,25 +382,25 @@ will provide it, so please check with your host to verify if you run into proble
 <h2>Loading the Library<a class="headerlink" href="#loading-the-library" title="Permalink to this headline">¶</a></h2>
 <p>The library can be loaded either manually or through the <a class="reference internal" href="../concepts/services.html"><span class="doc">Services class</span></a>.</p>
 <p>To load with the Services class call the <code class="docutils literal"><span class="pre">curlrequest()</span></code> method:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$client</span> <span class="o">=</span> <span class="nx">CodeIgniter\HTTP\Services</span><span class="o">::</span><span class="na">curlrequest</span><span class="p">();</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$client</span> <span class="o">=</span> <span class="nx">\CodeIgniter\HTTP\Services</span><span class="o">::</span><span class="na">curlrequest</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>You can pass in an array of default options as the first parameter to modify how cURL will handle the request.
-The options are described later in this document.:</p>
+The options are described later in this document:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$options</span> <span class="o">=</span> <span class="p">[</span>
         <span class="s1">&#39;base_uri&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;http://example.com/api/v1/&#39;</span><span class="p">,</span>
         <span class="s1">&#39;timeout&#39;</span> <span class="o">=&gt;</span> <span class="mi">3</span>
 <span class="p">];</span>
-<span class="nv">$client</span> <span class="o">=</span> <span class="nx">Config\Services</span><span class="o">::</span><span class="na">curlrequest</span><span class="p">(</span><span class="nv">$options</span><span class="p">);</span>
+<span class="nv">$client</span> <span class="o">=</span> <span class="nx">\Config\Services</span><span class="o">::</span><span class="na">curlrequest</span><span class="p">(</span><span class="nv">$options</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>When creating the class manually, you need to pass a few dependencies in. The first parameter is an
 instance of the <code class="docutils literal"><span class="pre">Config\App</span></code> class. The second parameter is a URI instance. The third
-parameter is a Response object. The fourth parameter is the optional <code class="docutils literal"><span class="pre">$options</span></code> array.:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CodeIgniter\HTTP\CURLRequest</span><span class="p">(</span>
-        <span class="k">new</span> <span class="nx">Config\App</span><span class="p">(),</span>
-        <span class="k">new</span> <span class="nx">CodeIgniter\HTTP\URI</span><span class="p">(),</span>
-        <span class="k">new</span> <span class="nx">CodeIgniter\HTTP\Response</span><span class="p">(),</span>
+parameter is a Response object. The fourth parameter is the optional <code class="docutils literal"><span class="pre">$options</span></code> array:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\CodeIgniter\HTTP\CURLRequest</span><span class="p">(</span>
+        <span class="k">new</span> <span class="nx">\Config\App</span><span class="p">(),</span>
+        <span class="k">new</span> <span class="nx">\CodeIgniter\HTTP\URI</span><span class="p">(),</span>
+        <span class="k">new</span> <span class="nx">\CodeIgniter\HTTP\Response</span><span class="p">(),</span>
         <span class="nv">$options</span>
 <span class="p">);</span>
 </pre></div>
@@ -431,7 +431,7 @@ available to you:</p>
 </pre></div>
 </div>
 <p>While the <code class="docutils literal"><span class="pre">request()</span></code> method is the most flexible, you can also use the following shortcut methods. They
-each take the URL as the first parameter and an array of options as the second.:</p>
+each take the URL as the first parameter and an array of options as the second:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;http://example.com&#39;</span><span class="p">);</span>
 <span class="o">*</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">delete</span><span class="p">(</span><span class="s1">&#39;http://example.com&#39;</span><span class="p">);</span>
 <span class="o">*</span> <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">head</span><span class="p">(</span><span class="s1">&#39;http://example.com&#39;</span><span class="p">);</span>
@@ -445,7 +445,7 @@ each take the URL as the first parameter and an array of options as the second.:
 <h4>Base URI<a class="headerlink" href="#base-uri" title="Permalink to this headline">¶</a></h4>
 <p>A <code class="docutils literal"><span class="pre">base_uri</span></code> can be set as one of the options during the instantiation of the class. This allows you to
 set a base URI, and then make all requests with that client using relative URLs. This is especially handy
-when working with APIs.:</p>
+when working with APIs:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$client</span> <span class="o">=</span> <span class="nx">Services</span><span class="o">::</span><span class="na">curlrequest</span><span class="p">([</span>
         <span class="s1">&#39;base_uri&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;https://example.com/api/v1/&#39;</span>
 <span class="p">]);</span>
@@ -573,7 +573,7 @@ allows you to modify how that works.</p>
 <a class="reference external" href="http://www.ietf.org/rfc/rfc2069.txt">Digest</a> and authentication. Your script may have to do extra to support
 Digest authentication - this simply passes the username and password along for you. The value must be an
 array where the first element is the username, and the second is the password. The third parameter should be
-the type of authentication to use, either <code class="docutils literal"><span class="pre">basic</span></code> or <code class="docutils literal"><span class="pre">digest</span></code>.:</p>
+the type of authentication to use, either <code class="docutils literal"><span class="pre">basic</span></code> or <code class="docutils literal"><span class="pre">digest</span></code>:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$client</span><span class="o">-&gt;</span><span class="na">request</span><span class="p">(</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;http://example.com&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;auth&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;password&#39;</span><span class="p">,</span> <span class="s1">&#39;digest&#39;</span><span class="p">]]);</span>
 </pre></div>
 </div>
@@ -587,7 +587,7 @@ The first way is to use the <code class="docutils literal"><span class="pre">set
 </pre></div>
 </div>
 <p>The second method is by passing a <code class="docutils literal"><span class="pre">body</span></code> option in. This is provided to maintain Guzzle API compatibility,
-and functions the exact same way as the previous example. The value must be a string.:</p>
+and functions the exact same way as the previous example. The value must be a string:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$client</span><span class="o">-&gt;</span><span class="na">request</span><span class="p">(</span><span class="s1">&#39;put&#39;</span><span class="p">,</span> <span class="s1">&#39;http://example.com&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;body&#39;</span> <span class="o">=&gt;</span> <span class="nv">$body</span><span class="p">]);</span>
 </pre></div>
 </div>
@@ -624,7 +624,7 @@ script execution. This is done by passing CURLOPT_VERBOSE and echoing the output
 </div>
 <div class="section" id="delay">
 <h3>delay<a class="headerlink" href="#delay" title="Permalink to this headline">¶</a></h3>
-<p>Allows you to pause a number of milliseconds before sending the request.:</p>
+<p>Allows you to pause a number of milliseconds before sending the request:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// Delay for 2 seconds</span>
 <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">request</span><span class="p">(</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;http://example.com&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;delay&#39;</span> <span class="o">=&gt;</span> <span class="mi">2000</span><span class="p">]);</span>
 </pre></div>
@@ -634,7 +634,7 @@ script execution. This is done by passing CURLOPT_VERBOSE and echoing the output
 <h3>form_params<a class="headerlink" href="#form-params" title="Permalink to this headline">¶</a></h3>
 <p>You can send form data in an application/x-www-form-urlencoded POST request by passing an associative array in
 the <code class="docutils literal"><span class="pre">form_params</span></code> option. This will set the <code class="docutils literal"><span class="pre">Content-Type</span></code> header to <code class="docutils literal"><span class="pre">application/x-www-form-urlencoded</span></code>
-if it&#8217;s not already set.:</p>
+if it&#8217;s not already set:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$client</span><span class="o">-&gt;</span><span class="na">request</span><span class="p">(</span><span class="s1">&#39;POST&#39;</span><span class="p">,</span> <span class="s1">&#39;/post&#39;</span><span class="p">,</span> <span class="p">[</span>
         <span class="s1">&#39;form_params&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
                 <span class="s1">&#39;foo&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span>
@@ -648,7 +648,7 @@ if it&#8217;s not already set.:</p>
 <h3>headers<a class="headerlink" href="#headers" title="Permalink to this headline">¶</a></h3>
 <p>While you can set any headers this request needs by using the <code class="docutils literal"><span class="pre">setHeader()</span></code> method, you can also pass an associative
 array of headers in as an option. Each key is the name of a header, and each value is a string or array of strings
-representing the header field values.:</p>
+representing the header field values:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$client</span><span class="o">-&gt;</span><span class="na">request</span><span class="p">(</span><span class="s1">&#39;get&#39;</span><span class="p">,</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="p">[</span>
         <span class="s1">&#39;headers&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
                 <span class="s1">&#39;User-Agent&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;testing/1.0&#39;</span><span class="p">,</span>
@@ -664,7 +664,7 @@ further headers arrays or calls to <code class="docutils literal"><span class="p
 <div class="section" id="http-errors">
 <h3>http_errors<a class="headerlink" href="#http-errors" title="Permalink to this headline">¶</a></h3>
 <p>By default, CURLRequest will fail if the HTTP code returned is greater than or equal to 400. You can set
-<code class="docutils literal"><span class="pre">http_errors</span></code> to <code class="docutils literal"><span class="pre">false</span></code> to return the content instead.:</p>
+<code class="docutils literal"><span class="pre">http_errors</span></code> to <code class="docutils literal"><span class="pre">false</span></code> to return the content instead:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$client</span><span class="o">-&gt;</span><span class="na">request</span><span class="p">(</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;/status/500&#39;</span><span class="p">);</span>
     <span class="c1">// Will fail verbosely</span>
 
@@ -678,7 +678,7 @@ further headers arrays or calls to <code class="docutils literal"><span class="p
 <h3>json<a class="headerlink" href="#json" title="Permalink to this headline">¶</a></h3>
 <p>The <code class="docutils literal"><span class="pre">json</span></code> option is used to easily upload JSON encoded data as the body of a request. A Content-Type header
 of <code class="docutils literal"><span class="pre">application/json</span></code> is added, overwriting any Content-Type that might be already set. The data provided to
-this option can be any value that <code class="docutils literal"><span class="pre">json_encode()</span></code> accepts.:</p>
+this option can be any value that <code class="docutils literal"><span class="pre">json_encode()</span></code> accepts:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span>$response = $client-&gt;request(&#39;PUT, &#39;/put&#39;, [&#39;json&#39; =&gt; [&#39;foo&#39; =&gt; &#39;bar&#39;]]);
 </pre></div>
 </div>
@@ -688,7 +688,7 @@ this option can be any value that <code class="docutils literal"><span class="pr
 <p>When you need to send files and other data via a POST request, you can use the <code class="docutils literal"><span class="pre">multipart</span></code> option, along with
 the <a class="reference external" href="http://php.net/manual/en/class.curlfile.php">CURLFile Class</a>. The values should be an associative array
 of POST data to send. For safer usage, the legacy method of uploading files by prefixing their name with an <cite>&#64;</cite>
-has been disabled. Any files that you want to send must be passed as instances of CURLFile.:</p>
+has been disabled. Any files that you want to send must be passed as instances of CURLFile:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$post_data</span> <span class="o">=</span> <span class="p">[</span>
         <span class="s1">&#39;foo&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;bar&#39;</span><span class="p">,</span>
         <span class="s1">&#39;userfile&#39;</span> <span class="o">=&gt;</span> <span class="k">new</span> <span class="nx">CURLFile</span><span class="p">(</span><span class="s1">&#39;/path/to/file.txt&#39;</span><span class="p">)</span>
@@ -698,7 +698,7 @@ has been disabled. Any files that you want to send must be passed as instances o
 </div>
 <div class="section" id="query">
 <h3>query<a class="headerlink" href="#query" title="Permalink to this headline">¶</a></h3>
-<p>You can pass along data to send as query string variables by passing an associative array as the <code class="docutils literal"><span class="pre">query</span></code> option.:</p>
+<p>You can pass along data to send as query string variables by passing an associative array as the <code class="docutils literal"><span class="pre">query</span></code> option:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// Send a GET request to /get?foo=bar</span>
 <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">request</span><span class="p">(</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;/get&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;query&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;bar&#39;</span><span class="p">]]);</span>
 </pre></div>
@@ -718,7 +718,7 @@ option. The value should be the number of seconds you want the functions to exec
 SSL certificate verification and uses the default CA bundle provided by the operating system. If set to <code class="docutils literal"><span class="pre">false</span></code> it
 will disable the certificate verification (this is insecure, and allows man-in-the-middle attacks!). You can set it
 to a string that contains the path to a CA bundle to enable verification with a custom certificate. The default value
-is true.:</p>
+is true:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// Use the system&#39;s CA bundle (this is the default setting)</span>
 <span class="nv">$client</span><span class="o">-&gt;</span><span class="na">request</span><span class="p">(</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;verify&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">]);</span>
 
@@ -733,10 +733,11 @@ is true.:</p>
 <div class="section" id="version">
 <h3>version<a class="headerlink" href="#version" title="Permalink to this headline">¶</a></h3>
 <p>To set the HTTP protocol to use, you can pass a string or float with the version number (typically either 1.0
-or 1.1, 2.0 is currently unsupported.)</p>
-<blockquote>
-<div>// Force HTTP/1.0
-$client-&gt;request(&#8216;GET&#8217;, &#8216;/&#8217;, [&#8216;version&#8217; =&gt; 1.0]);</div></blockquote>
+or 1.1, 2.0 is currently unsupported.):</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// Force HTTP/1.0</span>
+<span class="nv">$client</span><span class="o">-&gt;</span><span class="na">request</span><span class="p">(</span><span class="s1">&#39;GET&#39;</span><span class="p">,</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;version&#39;</span> <span class="o">=&gt;</span> <span class="mf">1.0</span><span class="p">]);</span>
+</pre></div>
+</div>
 </div>
 </div>
 </div>

@@ -485,7 +485,7 @@ match the name of the database group exactly:</p>
 <div class="section" id="usage-example">
 <h2><a class="toc-backref" href="#id5">Usage Example</a><a class="headerlink" href="#usage-example" title="Permalink to this headline">¶</a></h2>
 <p>In this example some simple code is placed in <strong>application/controllers/Migrate.php</strong>
-to update the schema.:</p>
+to update the schema:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">class</span> <span class="nc">Migrate</span> <span class="k">extends</span> <span class="nx">CI_Controller</span>
@@ -522,7 +522,7 @@ When running these commands, you should be in the same directory as your applica
 </div>
 <p><strong>current</strong></p>
 <p>Migrates all database groups to match the version set in <code class="docutils literal"><span class="pre">$currentVersion</span></code>. This will migrate both
-up and down as needed to match the specified version.:</p>
+up and down as needed to match the specified version:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nx">php</span> <span class="nx">index</span><span class="o">.</span><span class="nx">php</span> <span class="nx">migrations</span> <span class="nb">current</span>
 </pre></div>
 </div>
@@ -546,12 +546,12 @@ for the version.</p>
 </pre></div>
 </div>
 <p><strong>refresh</strong></p>
-<p>Refreshes the database state by first rolling back all migrations, and then migrating to the latest version.:</p>
+<p>Refreshes the database state by first rolling back all migrations, and then migrating to the latest version:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nx">php</span> <span class="nx">index</span><span class="o">.</span><span class="nx">php</span> <span class="nx">migrations</span> <span class="nx">refresh</span>
 </pre></div>
 </div>
 <p><strong>status</strong></p>
-<p>Displays a list of all migrations and the date and time they were ran, or &#8216;&#8211;&#8217; if they have not be ran.:</p>
+<p>Displays a list of all migrations and the date and time they were ran, or &#8216;&#8211;&#8217; if they have not be ran:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&gt;</span> <span class="nx">php</span> <span class="nx">index</span><span class="o">.</span><span class="nx">php</span> <span class="nx">migrations</span> <span class="nx">status</span>
 <span class="nx">Filename</span>                              <span class="nx">Migrated</span> <span class="nx">On</span>
 <span class="mi">20150101101500</span><span class="nx">_First_migration</span><span class="o">.</span><span class="nx">php</span>    <span class="mi">2016</span><span class="o">-</span><span class="mo">04</span><span class="o">-</span><span class="mi">25</span> <span class="mo">04</span><span class="o">:</span><span class="mi">44</span><span class="o">:</span><span class="mi">22</span>
@@ -707,7 +707,7 @@ specific versions. It works just like <code class="docutils literal"><span class
 </tr>
 </tbody>
 </table>
-<p>Sets the path the library should look for migration files.:</p>
+<p>Sets the path the library should look for migration files:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$migration</span><span class="o">-&gt;</span><span class="na">setPath</span><span class="p">(</span><span class="nv">$path</span><span class="p">)</span>
           <span class="o">-&gt;</span><span class="na">latest</span><span class="p">();</span>
 </pre></div>

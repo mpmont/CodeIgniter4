@@ -374,7 +374,7 @@ create an instance of the class and all your settings are there for you.</p>
 <h2>Accessing Config Files<a class="headerlink" href="#accessing-config-files" title="Permalink to this headline">¶</a></h2>
 <p>You can access config files within your classes by creating a new instance. All of the properties
 are public, so you access the settings like any other property:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Config\EmailConfig</span><span class="p">();</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$config</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\Config\EmailConfig</span><span class="p">();</span>
 
 <span class="c1">// Access settings as class properties</span>
 <span class="nv">$protocol</span> <span class="o">=</span> <span class="nv">$config</span><span class="o">-&gt;</span><span class="na">protocol</span><span class="p">;</span>
@@ -457,7 +457,7 @@ variable name within <code class="docutils literal"><span class="pre">${...}</sp
 system has no way of knowing what the correct value should be. You can protect against this by
 &#8220;namespacing&#8221; the variables. This is done by including the name of the config file (all lower case),
 followed by a period (.), and then the variable name itself. This is especially common when you
-have multiple database connections.:</p>
+have multiple database connections:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// Not namespaced</span>
 <span class="nx">db_name</span> <span class="o">=</span> <span class="s2">&quot;my_db&quot;</span>
 

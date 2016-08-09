@@ -392,7 +392,7 @@ major shortcomings when working with multiple files uploaded at once, and has po
 are not aware of. CodeIgniter helps with both of these situations by standardizing your usage of files behind a
 common interface.</p>
 <p>Files are accessed through the current <code class="docutils literal"><span class="pre">IncomingRequest</span></code> instance. To retrieve all files that were uploaded with this
-request, use <code class="docutils literal"><span class="pre">getFiles()</span></code>. This will return an array of files represented by instances of <code class="docutils literal"><span class="pre">CodeIgniter\HTTP\Files\UploadedFile</span></code>.</p>
+request, use <code class="docutils literal"><span class="pre">getFiles()</span></code>. This will return an array of files represented by instances of <code class="docutils literal"><span class="pre">CodeIgniter\HTTP\Files\UploadedFile</span></code>:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$files</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">getFiles</span><span class="p">();</span>
 </pre></div>
 </div>
@@ -478,18 +478,18 @@ this method:</p>
 <p><strong>getName()</strong></p>
 <p>You can retrieve the original filename provided by the client with the <code class="docutils literal"><span class="pre">getName()</span></code> method. This will typically be the
 filename sent by the client, and should not be trusted. If the file has been moved, this will return the final name of
-the moved file.:</p>
+the moved file:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$name</span> <span class="o">=</span> <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">getName</span><span class="p">();</span>
 </pre></div>
 </div>
 <p><strong>getTempName()</strong></p>
-<p>To get the name of the temp file that was created during the upload, you can use the <code class="docutils literal"><span class="pre">getTempName()</span></code> method.:</p>
+<p>To get the name of the temp file that was created during the upload, you can use the <code class="docutils literal"><span class="pre">getTempName()</span></code> method:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$tempfile</span> <span class="o">=</span> <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">getTempName</span><span class="p">();</span>
 </pre></div>
 </div>
 <p><strong>getRandomName()</strong></p>
 <p>You can generate a cryptographically secure random filename, with the current timestamp prepended, with the <code class="docutils literal"><span class="pre">getRandomName()</span></code>
-method. This is especially useful to rename files when moving it so that the filename is unguessable.</p>
+method. This is especially useful to rename files when moving it so that the filename is unguessable:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// Generates something like: 1465965676_385e33f741.jpg</span>
 <span class="nv">$newName</span> <span class="o">=</span> <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">getRandomName</span><span class="p">();</span>
 </pre></div>
@@ -500,20 +500,20 @@ method. This is especially useful to rename files when moving it so that the fil
 <p><strong>getExtension()</strong></p>
 <p>Attempts to determine the file extension based on the trusted <code class="docutils literal"><span class="pre">getType()</span></code> method instead of the value listed
 in <code class="docutils literal"><span class="pre">$_FILES</span></code>. If the mime type is unknown, will return null. Uses the values in <strong>application/Config/Mimes.php</strong>
-to determine extension.</p>
+to determine extension:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// Returns &#39;jpg&#39; (WITHOUT the period)</span>
 <span class="nv">$ext</span> <span class="o">=</span> <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">getExtension</span><span class="p">();</span>
 </pre></div>
 </div>
 <p><strong>getClientExtension()</strong></p>
 <p>Returns the original file extension, based on the file name that was uploaded. This is NOT a trusted source. For a
-trusted version, use <code class="docutils literal"><span class="pre">getExtension()</span></code> instead.</p>
+trusted version, use <code class="docutils literal"><span class="pre">getExtension()</span></code> instead:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$ext</span> <span class="o">=</span> <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">getClientExtension</span><span class="p">();</span>
 </pre></div>
 </div>
 <p><strong>getType()</strong></p>
 <p>Retrieve the media type (mime type) of the file. Does not use information from the $_FILES array, but uses other methods to more
-accurately determine the type of file, like <code class="docutils literal"><span class="pre">finfo</span></code>, or <code class="docutils literal"><span class="pre">mime_content_type</span></code>.</p>
+accurately determine the type of file, like <code class="docutils literal"><span class="pre">finfo</span></code>, or <code class="docutils literal"><span class="pre">mime_content_type</span></code>:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$type</span> <span class="o">=</span> <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">getType</span><span class="p">();</span>
 
 <span class="k">echo</span> <span class="nv">$type</span><span class="p">;</span> <span class="c1">// image/png</span>
@@ -521,7 +521,7 @@ accurately determine the type of file, like <code class="docutils literal"><span
 </div>
 <p><strong>getClientType()</strong></p>
 <p>Returns the mime type (mime type) of the file as provided by the client. This is NOT a trusted value. For a trusted
-version, use <code class="docutils literal"><span class="pre">getType()</span></code> instead.</p>
+version, use <code class="docutils literal"><span class="pre">getType()</span></code> instead:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$type</span> <span class="o">=</span> <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">getClientType</span><span class="p">();</span>
 
 <span class="k">echo</span> <span class="nv">$type</span><span class="p">;</span> <span class="c1">// image/png</span>
@@ -529,7 +529,7 @@ version, use <code class="docutils literal"><span class="pre">getType()</span></
 </div>
 <p><strong>getSize()</strong></p>
 <p>Returns the size of the uploaded file in bytes. You can pass in either &#8216;kb&#8217; or &#8216;mb&#8217; as the first parameter to get
-the results in kilobytes or megabytes, respectively.</p>
+the results in kilobytes or megabytes, respectively:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$bytes</span>     <span class="o">=</span> <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">getSize</span><span class="p">();</span>      <span class="c1">// 256901</span>
 <span class="nv">$kilobytes</span> <span class="o">=</span> <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">getSize</span><span class="p">(</span><span class="s1">&#39;kb&#39;</span><span class="p">);</span>  <span class="c1">// 250.880</span>
 <span class="nv">$megabytes</span> <span class="o">=</span> <span class="nv">$file</span><span class="o">-&gt;</span><span class="na">getSize</span><span class="p">(</span><span class="s1">&#39;mb&#39;</span><span class="p">);</span>  <span class="c1">// 0.245</span>

@@ -411,7 +411,7 @@ and put the following code in it:</p>
 <span class="p">{</span>
         <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span>
         <span class="p">{</span>
-                <span class="k">echo</span> <span class="s1">&#39;Hellow World!&#39;</span><span class="p">;</span>
+                <span class="k">echo</span> <span class="s1">&#39;Hello World!&#39;</span><span class="p">;</span>
         <span class="p">}</span>
 <span class="p">}</span>
 </pre></div>
@@ -435,14 +435,14 @@ and put the following code in it:</p>
 </div>
 <p>This is valid:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-<span class="k">class</span> <span class="nc">Blog</span> <span class="k">extends</span> <span class="nx">CodeIgniter\Controller</span> <span class="p">{</span>
+<span class="k">class</span> <span class="nc">Blog</span> <span class="k">extends</span> <span class="nx">\CodeIgniter\Controller</span> <span class="p">{</span>
 
 <span class="p">}</span>
 </pre></div>
 </div>
 <p>This is <strong>not</strong> valid:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-<span class="k">class</span> <span class="nc">blog</span> <span class="k">extends</span> <span class="nx">CodeIgniter\Controller</span> <span class="p">{</span>
+<span class="k">class</span> <span class="nc">blog</span> <span class="k">extends</span> <span class="nx">\CodeIgniter\Controller</span> <span class="p">{</span>
 
 <span class="p">}</span>
 </pre></div>
@@ -462,7 +462,7 @@ empty. Another way to show your &#8220;Hello World&#8221; message would be this:
 controller gets called.</strong></p>
 <p>Let&#8217;s try it. Add a new method to your controller:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-<span class="k">class</span> <span class="nc">Blog</span> <span class="k">extends</span> <span class="nx">CodeIgniter\Controller</span> <span class="p">{</span>
+<span class="k">class</span> <span class="nc">Blog</span> <span class="k">extends</span> <span class="nx">\CodeIgniter\Controller</span> <span class="p">{</span>
 
         <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span>
         <span class="p">{</span>
@@ -492,7 +492,7 @@ method as parameters.</p>
 </div>
 <p>Your method will be passed URI segments 3 and 4 (&#8220;sandals&#8221; and &#8220;123&#8221;):</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-<span class="k">class</span> <span class="nc">Products</span> <span class="k">extends</span> <span class="nx">CodeIgniter\Controller</span> <span class="p">{</span>
+<span class="k">class</span> <span class="nc">Products</span> <span class="k">extends</span> <span class="nx">\CodeIgniter\Controller</span> <span class="p">{</span>
 
         <span class="k">public</span> <span class="k">function</span> <span class="nf">shoes</span><span class="p">(</span><span class="nv">$sandals</span><span class="p">,</span> <span class="nv">$id</span><span class="p">)</span>
         <span class="p">{</span>
@@ -627,7 +627,7 @@ be overriding the one in the parent controller class so we need to
 manually call it.</p>
 <p>Example:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span>
-<span class="k">class</span> <span class="nc">Blog</span> <span class="k">extends</span> <span class="nx">CodeIgniter\Controller</span>
+<span class="k">class</span> <span class="nc">Blog</span> <span class="k">extends</span> <span class="nx">\CodeIgniter\Controller</span>
 <span class="p">{</span>
         <span class="k">public</span> <span class="k">function</span> <span class="nf">__construct</span><span class="p">(</span><span class="o">...</span><span class="nv">$params</span><span class="p">)</span>
         <span class="p">{</span>

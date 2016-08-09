@@ -425,7 +425,7 @@ copy the cloning URL shown. We will refer to this as ORIGIN_URL.</p>
 <p>Within your local repository, Git will have created an alias, <strong>origin</strong>, for the
 Github repository it is bound to. You want to create an alias for the shared
 repository, so that you can &#8220;synch&#8221; the two, making sure that your repository
-includes any other contributions that have been merged by us into the shared repo.:</p>
+includes any other contributions that have been merged by us into the shared repo:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">git</span> <span class="nx">remote</span> <span class="nx">add</span> <span class="nx">upstream</span> <span class="nx">UPSTREAM_URL</span>
 </pre></div>
 </div>
@@ -453,7 +453,7 @@ to hold a group of related changes (source, unit testing, documentation,
 change log, etc). This local branch should be named appropriately,
 for instance &#8220;fix/problem123&#8221; or &#8220;new/mind-reader&#8221;.</p>
 <p>For instance, make sure you are in the <em>develop</em> branch, and create a
-new feature branch, based on <em>develop</em>, for a new feature you are creating.:</p>
+new feature branch, based on <em>develop</em>, for a new feature you are creating:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">git</span> <span class="nx">checkout</span> <span class="nx">develop</span>
 <span class="nx">git</span> <span class="nx">checkout</span> <span class="o">-</span><span class="nx">b</span> <span class="k">new</span><span class="o">/</span><span class="nx">mind</span><span class="o">-</span><span class="nx">reader</span>
 </pre></div>

@@ -428,7 +428,7 @@ portion at the top of the main <code class="docutils literal"><span class="pre">
 <p>This is used to signal a 404, Page Not Found error. When thrown, the system will show the view found at
 <code class="docutils literal"><span class="pre">/application/views/errors/html/error_404.php</span></code>. You should customize all of the error views for your site.
 If, in <code class="docutils literal"><span class="pre">Config/Routes.php</span></code>, you have specified a 404 Override, that will be called instead of the standard
-404 page.:</p>
+404 page:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span> <span class="nv">$page</span> <span class="o">=</span> <span class="nv">$pageModel</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">(</span><span class="nv">$id</span><span class="p">))</span>
 <span class="p">{</span>
         <span class="k">throw</span> <span class="k">new</span> <span class="nx">\CodeIgniter\PageNotFoundException</span><span class="p">();</span>
@@ -440,7 +440,7 @@ If, in <code class="docutils literal"><span class="pre">Config/Routes.php</span>
 <div class="section" id="configexception">
 <h3>ConfigException<a class="headerlink" href="#configexception" title="Permalink to this headline">¶</a></h3>
 <p>This exception should be used when the values from the configuration class are invalid, or when the config class
-is not the right type, etc.:</p>
+is not the right type, etc:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">throw</span> <span class="k">new</span> <span class="nx">\CodeIgniter\ConfigException</span><span class="p">();</span>
 </pre></div>
 </div>
@@ -448,7 +448,7 @@ is not the right type, etc.:</p>
 </div>
 <div class="section" id="unknownfileexception">
 <h3>UnknownFileException<a class="headerlink" href="#unknownfileexception" title="Permalink to this headline">¶</a></h3>
-<p>Use this exception when a file cannot be found.:</p>
+<p>Use this exception when a file cannot be found:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">throw</span> <span class="k">new</span> <span class="nx">\CodeIgniter\UnknownFileException</span><span class="p">();</span>
 </pre></div>
 </div>
@@ -456,7 +456,7 @@ is not the right type, etc.:</p>
 </div>
 <div class="section" id="unknownclassexception">
 <h3>UnknownClassException<a class="headerlink" href="#unknownclassexception" title="Permalink to this headline">¶</a></h3>
-<p>Use this exception when a class cannot be found.:</p>
+<p>Use this exception when a class cannot be found:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">throw</span> <span class="k">new</span> <span class="nx">\CodeIgniter\UnknownClassException</span><span class="p">(</span><span class="nv">$className</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -472,7 +472,7 @@ is not the right type, etc.:</p>
 </div>
 <div class="section" id="userinputexception">
 <h3>UserInputException<a class="headerlink" href="#userinputexception" title="Permalink to this headline">¶</a></h3>
-<p>Use this exception when the user&#8217;s input is not valid.:</p>
+<p>Use this exception when the user&#8217;s input is not valid:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">throw</span> <span class="k">new</span> <span class="nx">\CodeIgniter\UserInputException</span><span class="p">();</span>
 </pre></div>
 </div>

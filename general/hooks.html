@@ -381,7 +381,7 @@ action when that hook is triggered.</p>
 <h2>Defining a Hook<a class="headerlink" href="#defining-a-hook" title="Permalink to this headline">¶</a></h2>
 <p>Most hooks are defined within the <strong>application/Config/Hooks.php</strong> file. You can subscribe an action to a hook with
 the Hooks class&#8217; <code class="docutils literal"><span class="pre">on()</span></code> method. The first parameter is the name of the hook to subscribe to. The second parameter is
-a callable that will be run when that event is triggered.:</p>
+a callable that will be run when that event is triggered:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CodeIgniter\Hooks\Hooks</span><span class="p">;</span>
 
 <span class="nx">Hooks</span><span class="o">::</span><span class="na">on</span><span class="p">(</span><span class="s1">&#39;pre_system&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;MyClass&#39;</span><span class="p">,</span> <span class="s1">&#39;MyFunction&#39;</span><span class="p">]);</span>
@@ -411,13 +411,13 @@ a callable that will be run when that event is triggered.:</p>
 <h3>Setting Priorities<a class="headerlink" href="#setting-priorities" title="Permalink to this headline">¶</a></h3>
 <p>Since multiple methods can be subscribed to a single event, you will need a way to define in what order those methods
 are called. You can do this by passing a priority value as the third parameter of the <code class="docutils literal"><span class="pre">on()</span></code> method. Lower values
-are executed first, with a value of 1 having the highest priority, and there being no limit on the lower values.:</p>
+are executed first, with a value of 1 having the highest priority, and there being no limit on the lower values:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">Hooks</span><span class="o">::</span><span class="na">on</span><span class="p">(</span><span class="s1">&#39;post_controller_constructor&#39;</span><span class="p">,</span> <span class="s1">&#39;some_function&#39;</span><span class="p">,</span> <span class="mi">25</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Any subscribers with the same priority will be executed in the order they were defined.</p>
 <p>Three constants are defined for your use, that set some helpful ranges on the values. You are not required to use these
-but you might find they aid readability.:</p>
+but you might find they aid readability:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nb">define</span><span class="p">(</span><span class="s1">&#39;HOOKS_PRIORITY_LOW&#39;</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
 <span class="nb">define</span><span class="p">(</span><span class="s1">&#39;HOOKS_PRIORITY_NORMAL&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
 <span class="nb">define</span><span class="p">(</span><span class="s1">&#39;HOOKS_PRIORITY_HIGH&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
@@ -435,7 +435,7 @@ need to call the <code class="docutils literal"><span class="pre">trigger()</spa
 </pre></div>
 </div>
 <p>You can pass any number of arguments to the subscribers by adding them as additional parameters. Subscribers will be
-given the arguments in the same order as defined.:</p>
+given the arguments in the same order as defined:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">\CodeIgniter\Hooks\Hooks</span><span class="o">::</span><span class="na">trigger</span><span class="p">(</span><span class="s1">&#39;some_hook&#39;</span><span class="p">,</span> <span class="nv">$foo</span><span class="p">,</span> <span class="nv">$bar</span><span class="p">,</span> <span class="nv">$baz</span><span class="p">);</span>
 
 <span class="nx">Hooks</span><span class="o">::</span><span class="na">on</span><span class="p">(</span><span class="s1">&#39;some_hook&#39;</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="nv">$foo</span><span class="p">,</span> <span class="nv">$bar</span><span class="p">,</span> <span class="nv">$baz</span><span class="p">)</span> <span class="p">{</span>

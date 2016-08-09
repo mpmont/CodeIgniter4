@@ -732,16 +732,16 @@ filters. Pass in the desired filter type as the second parameter:</p>
 <p>To return an array of all POST items call without any parameters.</p>
 <p>To return all POST items and pass them through the filter, set the
 first parameter to null while setting the second parameter to the filter
-you want to use.:</p>
+you want to use:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getVar</span><span class="p">(</span><span class="k">null</span><span class="p">,</span> <span class="nx">FILTER_SANITIZE_STRING</span><span class="p">);</span> <span class="c1">// returns all POST items with string sanitation</span>
 </pre></div>
 </div>
-<p>To return an array of multiple  POST parameters, pass all the required keys as an array.:</p>
+<p>To return an array of multiple  POST parameters, pass all the required keys as an array:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getVar</span><span class="p">([</span><span class="s1">&#39;field1&#39;</span><span class="p">,</span> <span class="s1">&#39;field2&#39;</span><span class="p">]);</span>
 </pre></div>
 </div>
 <p>Same rule applied here, to retrieve the parameters with filtering, set the second parameter to
-the filter type to apply.:</p>
+the filter type to apply:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getVar</span><span class="p">([</span><span class="s1">&#39;field1&#39;</span><span class="p">,</span> <span class="s1">&#39;field2&#39;</span><span class="p">],</span> <span class="nx">FILTER_SANITIZE_STRING</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -885,7 +885,7 @@ then in POST:</p>
 $request-&gt;getCookie(&#39;some_cookie, FILTER_SANITIZE_STRING); // with filter
 </pre></div>
 </div>
-<p>To return an array of multiple cookie values, pass all the required keys as an array.:</p>
+<p>To return an array of multiple cookie values, pass all the required keys as an array:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getCookie</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;some_cookie&#39;</span><span class="p">,</span> <span class="s1">&#39;some_cookie2&#39;</span><span class="p">));</span>
 </pre></div>
 </div>
@@ -952,7 +952,7 @@ as an array.</p>
 </tr>
 </tbody>
 </table>
-<p>This method returns the User Agent string from the SERVER data.:</p>
+<p>This method returns the User Agent string from the SERVER data:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getUserAgent</span><span class="p">();</span>
 </pre></div>
 </div>

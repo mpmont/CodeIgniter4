@@ -449,7 +449,7 @@ configuration file.</p>
 <h3><a class="toc-backref" href="#id5">Configuring Your Model</a><a class="headerlink" href="#configuring-your-model" title="Permalink to this headline">¶</a></h3>
 <p>The model class has a few configuration options that can be set to allow the class&#8217; methods
 to work seamlessly for you. The first two are used by all of the CRUD methods to determine
-what table to use and how we can find the required records.:</p>
+what table to use and how we can find the required records:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">UserModel</span> <span class="k">extends</span> <span class="nx">\CodeIgniter\Model</span>
 <span class="p">{</span>
         <span class="k">protected</span> <span class="nv">$table</span>      <span class="o">=</span> <span class="s1">&#39;users&#39;</span><span class="p">;</span>
@@ -514,7 +514,7 @@ insert(), update(), delete() and more.</p>
 </div>
 <p>The value is returned in the format specified in $returnType.</p>
 <p>You can specify more than one row to return by passing an array of primaryKey values instead
-of just one.:</p>
+of just one:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$users</span> <span class="o">=</span> <span class="nv">$userModel</span><span class="o">-&gt;</span><span class="na">find</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]);</span>
 </pre></div>
 </div>
@@ -535,7 +535,7 @@ all rows that match:</p>
 <p>Returns all results.</p>
 <blockquote>
 <div>$users = $userModel-&gt;findAll();</div></blockquote>
-<p>This query may be modified by interjecting Query Builder commands as needed prior to calling this method.:</p>
+<p>This query may be modified by interjecting Query Builder commands as needed prior to calling this method:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$users</span> <span class="o">=</span> <span class="nv">$userModel</span><span class="o">-&gt;</span><span class="na">where</span><span class="p">(</span><span class="s1">&#39;active&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
                    <span class="o">-&gt;</span><span class="na">findAll</span><span class="p">();</span>
 </pre></div>
@@ -564,7 +564,7 @@ temporarily override this, you can use the withDeleted() method prior to calling
 </div>
 <p><strong>onlyDeleted()</strong></p>
 <p>Whereas withDeleted() will return both deleted and not-deleted rows, this method modifies
-the next find* methods to return only soft deleted rows.:</p>
+the next find* methods to return only soft deleted rows:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$deletedUsers</span> <span class="o">=</span> <span class="nv">$userModel</span><span class="o">-&gt;</span><span class="na">onlyDeleted</span><span class="p">()</span>
                                                   <span class="o">-&gt;</span><span class="na">findAll</span><span class="p">();</span>
 </pre></div>

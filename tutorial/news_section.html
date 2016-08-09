@@ -456,7 +456,7 @@ a new <code class="docutils literal"><span class="pre">News</span></code> contro
 
         <span class="k">public</span> <span class="k">function</span> <span class="nf">view</span><span class="p">(</span><span class="nv">$slug</span> <span class="o">=</span> <span class="k">null</span><span class="p">)</span>
         <span class="p">{</span>
-            <span class="nv">$model</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">NewsModel</span><span class="p">();</span>
+                <span class="nv">$model</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">NewsModel</span><span class="p">();</span>
 
                 <span class="nv">$data</span><span class="p">[</span><span class="s1">&#39;news&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$model</span><span class="o">-&gt;</span><span class="na">getNews</span><span class="p">(</span><span class="nv">$slug</span><span class="p">);</span>
         <span class="p">}</span>
@@ -481,7 +481,7 @@ the views. Modify the <code class="docutils literal"><span class="pre">index()</
 
         <span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
                 <span class="s1">&#39;news&#39;</span>  <span class="o">=&gt;</span> <span class="nv">$model</span><span class="o">-&gt;</span><span class="na">getNews</span><span class="p">(),</span>
-            <span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;News archive&#39;</span><span class="p">,</span>
+                <span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;News archive&#39;</span><span class="p">,</span>
         <span class="p">];</span>
 
         <span class="k">echo</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;Templates/Header&#39;</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
@@ -562,7 +562,7 @@ The only things left to do is create the corresponding view at
 <p>Because of the wildcard routing rule created earlier, you need an extra
 route to view the controller that you just made. Modify your routing file
 (<em>application/config/routes.php</em>) so it looks as follows.
-This makes sure the requests reaches the <code class="docutils literal"><span class="pre">News</span></code> controller instead of
+This makes sure the requests reach the <code class="docutils literal"><span class="pre">News</span></code> controller instead of
 going directly to the <code class="docutils literal"><span class="pre">Pages</span></code> controller. The first line routes URI&#8217;s
 with a slug to the <code class="docutils literal"><span class="pre">view()</span></code> method in the <code class="docutils literal"><span class="pre">News</span></code> controller.</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$routes</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;news/(:segment)&#39;</span><span class="p">,</span> <span class="s1">&#39;News::view/$1&#39;</span><span class="p">);</span>

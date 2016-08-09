@@ -374,7 +374,7 @@ can handle this for you.</p>
 <div class="section" id="loading-the-class">
 <h2>Loading the Class<a class="headerlink" href="#loading-the-class" title="Permalink to this headline">¶</a></h2>
 <p>You can load an instance of the class manually through the Service class:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$negotiator</span> <span class="o">=</span> <span class="nx">Config\Services</span><span class="o">::</span><span class="na">negotiator</span><span class="p">();</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$negotiator</span> <span class="o">=</span> <span class="nx">\Config\Services</span><span class="o">::</span><span class="na">negotiator</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>This will grab the current request instance and automatically inject it into the Negotiator class.</p>
@@ -402,7 +402,7 @@ from an API endpoint:</p>
 </pre></div>
 </div>
 <p>The server now needs to provide a list of what type of content it can provide. In this example, the API might
-be able to return data as raw HTML, JSON, or XML. This list should be provided in order of preference.:</p>
+be able to return data as raw HTML, JSON, or XML. This list should be provided in order of preference:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$supported</span> <span class="o">=</span> <span class="p">[</span>
         <span class="s1">&#39;application/json&#39;</span><span class="p">,</span>
         <span class="s1">&#39;text/html&#39;</span><span class="p">,</span>
@@ -434,8 +434,8 @@ header:</p>
 <span class="nx">Accept</span><span class="o">-</span><span class="nx">Language</span><span class="o">:</span> <span class="nx">fr</span><span class="p">;</span> <span class="nx">q</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="nx">en</span><span class="p">;</span> <span class="nx">q</span><span class="o">=</span><span class="mf">0.5</span>
 </pre></div>
 </div>
-<p>In this example, the browser would prefer french, with a second choice of english. If your website supports english
-and german you would do something like:</p>
+<p>In this example, the browser would prefer French, with a second choice of English. If your website supports English
+and German you would do something like:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$supported</span> <span class="o">=</span> <span class="p">[</span>
         <span class="s1">&#39;en&#39;</span><span class="p">,</span>
         <span class="s1">&#39;de&#39;</span>

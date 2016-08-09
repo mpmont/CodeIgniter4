@@ -372,7 +372,7 @@ of hard-coding a class name to load, the classes to call are defined within a ve
 configuration file. This file acts as a type of factory to create new instances of the required class.</p>
 <p>A quick example will probably make things clearer, so imagine that you need to pull in an instance
 of the Timer class. The simplest method would simply be to create a new instance of that class:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$timer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CodeIgniter\Debug\Timer</span><span class="p">();</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$timer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">\CodeIgniter\Debug\Timer</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>And this works great. Until you decide that you want to use a different timer class in its place.
@@ -385,7 +385,7 @@ come in handy.</p>
 class for us. This class is kept very simple. It only contains a method for each class that we want
 to use as a service. The method typically returns a new instance of that class, passing any dependencies
 it might have into it. Then, we would replace our timer creation code with code that calls this new class:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$timer</span> <span class="o">=</span> <span class="nx">Config\Services</span><span class="o">::</span><span class="na">timer</span><span class="p">();</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$timer</span> <span class="o">=</span> <span class="nx">\Config\Services</span><span class="o">::</span><span class="na">timer</span><span class="p">();</span>
 </pre></div>
 </div>
 <p>When you need to change the implementation used, you can modify the services configuration file, and
@@ -470,7 +470,7 @@ the path it uses:</p>
 is created. This is easily handled with the <code class="docutils literal"><span class="pre">getSharedInstance()</span></code> method that is called from within the
 factory method. This handles checking if an instance has been created and saved
 within the class, and, if not, creates a new one. All of the factory methods provide a
-<code class="docutils literal"><span class="pre">$getShared</span> <span class="pre">=</span> <span class="pre">false</span></code> value as the last parameter. You should stick to the method also.:</p>
+<code class="docutils literal"><span class="pre">$getShared</span> <span class="pre">=</span> <span class="pre">false</span></code> value as the last parameter. You should stick to the method also:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Services</span>
 <span class="p">{</span>
     <span class="k">public</span> <span class="k">static</span> <span class="k">function</span> <span class="nf">routes</span><span class="p">(</span><span class="nv">$getShared</span> <span class="o">=</span> <span class="k">false</span><span class="p">)</span>

@@ -376,12 +376,13 @@ a server responding to the client that called it.</p>
 <li><a class="reference internal" href="#setting-headers" id="id4">Setting Headers</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#http-caching" id="id5">HTTP Caching</a></li>
-<li><a class="reference internal" href="#content-security-policy" id="id6">Content Security Policy</a><ul>
-<li><a class="reference internal" href="#turning-csp-on" id="id7">Turning CSP On</a></li>
-<li><a class="reference internal" href="#runtime-configuration" id="id8">Runtime Configuration</a></li>
-<li><a class="reference internal" href="#inline-content" id="id9">Inline Content</a><ul>
-<li><a class="reference internal" href="#class-reference" id="id10">Class Reference</a></li>
+<li><a class="reference internal" href="#force-file-download" id="id5">Force File Download</a></li>
+<li><a class="reference internal" href="#http-caching" id="id6">HTTP Caching</a></li>
+<li><a class="reference internal" href="#content-security-policy" id="id7">Content Security Policy</a><ul>
+<li><a class="reference internal" href="#turning-csp-on" id="id8">Turning CSP On</a></li>
+<li><a class="reference internal" href="#runtime-configuration" id="id9">Runtime Configuration</a></li>
+<li><a class="reference internal" href="#inline-content" id="id10">Inline Content</a><ul>
+<li><a class="reference internal" href="#class-reference" id="id11">Class Reference</a></li>
 </ul>
 </li>
 </ul>
@@ -437,8 +438,32 @@ parameter. This is not case-sensitive.</p>
 </div>
 </div>
 </div>
+<div class="section" id="force-file-download">
+<h2><a class="toc-backref" href="#id5">Force File Download</a><a class="headerlink" href="#force-file-download" title="Permalink to this headline">¶</a></h2>
+<p>The Reponse class provides a simple way to send a file to the client, prompting the browser to download the data
+to your computer. This sets the appropriate headers to make it happen.</p>
+<p>The first parameter is the <strong>name you want the downloaded file to be named</strong>, the second parameter is the
+file data.</p>
+<p>If you set the second parameter to NULL and <code class="docutils literal"><span class="pre">$filename</span></code> is an existing, readable
+file path, then its content will be read instead.</p>
+<p>If you set the third parameter to boolean TRUE, then the actual file MIME type
+(based on the filename extension) will be sent, so that if your browser has a
+handler for that type - it can use it.</p>
+<p>Example:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="s1">&#39;Here is some text!&#39;</span><span class="p">;</span>
+<span class="nv">$name</span> <span class="o">=</span> <span class="s1">&#39;mytext.txt&#39;</span><span class="p">;</span>
+<span class="nv">$response</span><span class="o">-&gt;</span><span class="na">download</span><span class="p">(</span><span class="nv">$name</span><span class="p">,</span> <span class="nv">$data</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>If you want to download an existing file from your server you&#8217;ll need to
+do the following:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// Contents of photo.jpg will be automatically read</span>
+<span class="nv">$response</span><span class="o">-&gt;</span><span class="na">download</span><span class="p">(</span><span class="s1">&#39;/path/to/photo.jpg&#39;</span><span class="p">,</span> <span class="k">NULL</span><span class="p">);</span>
+</pre></div>
+</div>
+</div>
 <div class="section" id="http-caching">
-<h2><a class="toc-backref" href="#id5">HTTP Caching</a><a class="headerlink" href="#http-caching" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id6">HTTP Caching</a><a class="headerlink" href="#http-caching" title="Permalink to this headline">¶</a></h2>
 <p>Built into the HTTP specification are tools help the client (often the web browser) cache the results. Used correctly,
 this can lend a huge performance boost to your application because it will tell the client that they don&#8217;t need
 to contact the getServer at all since nothing has changed. And you can&#8217;t get faster than that.</p>
@@ -463,7 +488,7 @@ situation. While most of the options are applied to the <code class="docutils li
 the <code class="docutils literal"><span class="pre">etag</span></code> and <code class="docutils literal"><span class="pre">last-modified</span></code> options to their appropriate header.</p>
 </div>
 <div class="section" id="content-security-policy">
-<h2><a class="toc-backref" href="#id6">Content Security Policy</a><a class="headerlink" href="#content-security-policy" title="Permalink to this headline">¶</a></h2>
+<h2><a class="toc-backref" href="#id7">Content Security Policy</a><a class="headerlink" href="#content-security-policy" title="Permalink to this headline">¶</a></h2>
 <p>One of the best protections you have against XSS attacks is to implement a Content Security Policy on the site.
 This forces you to whitelist every single source of content that is pulled in from your site&#8217;s HTML,
 including images, stylesheets, javascript files, etc. The browser will refuse content from sources that don&#8217;t meet
@@ -480,7 +505,7 @@ visit the following sites:</p>
 <li><a class="reference external" href="https://www.sitepoint.com/improving-web-security-with-the-content-security-policy/">Article at SitePoint</a></li>
 </ul>
 <div class="section" id="turning-csp-on">
-<h3><a class="toc-backref" href="#id7">Turning CSP On</a><a class="headerlink" href="#turning-csp-on" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id8">Turning CSP On</a><a class="headerlink" href="#turning-csp-on" title="Permalink to this headline">¶</a></h3>
 <p>By default, support for this is off. To enable support in your application, edit the <code class="docutils literal"><span class="pre">CSPEnabled</span></code> value in
 <strong>application/Config/App.php</strong>:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nv">$CSPEnabled</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
@@ -491,7 +516,7 @@ values set in <strong>application/Config/ContentSecurityPolicy.php</strong> are 
 needed during runtime, then the correctly formatted header is sent and you&#8217;re all done.</p>
 </div>
 <div class="section" id="runtime-configuration">
-<h3><a class="toc-backref" href="#id8">Runtime Configuration</a><a class="headerlink" href="#runtime-configuration" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id9">Runtime Configuration</a><a class="headerlink" href="#runtime-configuration" title="Permalink to this headline">¶</a></h3>
 <p>If your application needs to make changes at run-time, you can access the instance at <code class="docutils literal"><span class="pre">$response-&gt;CSP</span></code>. The
 class holds a number of methods that map pretty clearly to the appropriate header value that you need to set:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$reportOnly</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
@@ -517,7 +542,7 @@ class holds a number of methods that map pretty clearly to the appropriate heade
 </div>
 </div>
 <div class="section" id="inline-content">
-<h3><a class="toc-backref" href="#id9">Inline Content</a><a class="headerlink" href="#inline-content" title="Permalink to this headline">¶</a></h3>
+<h3><a class="toc-backref" href="#id10">Inline Content</a><a class="headerlink" href="#inline-content" title="Permalink to this headline">¶</a></h3>
 <p>It is possible to set a website to not protect even inline scripts and styles on its own pages, since this might have
 been the result of user-generated content. To protect against this, CSP allows you to specify a nonce within the
 <code class="docutils literal"><span class="pre">&lt;style&gt;</span></code> and <code class="docutils literal"><span class="pre">&lt;script&gt;</span></code> tags, and to add those values to the response&#8217;s header. This is a pain to handle in real
@@ -540,7 +565,7 @@ life, and is most secure when generated on the fly. To make this simple, you can
 </pre></div>
 </div>
 <div class="section" id="class-reference">
-<h4><a class="toc-backref" href="#id10">Class Reference</a><a class="headerlink" href="#class-reference" title="Permalink to this headline">¶</a></h4>
+<h4><a class="toc-backref" href="#id11">Class Reference</a><a class="headerlink" href="#class-reference" title="Permalink to this headline">¶</a></h4>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">In addition to the methods listed here, this class inherits the methods from the
@@ -582,7 +607,7 @@ life, and is most secure when generated on the fly. To make this simple, you can
 </tbody>
 </table>
 <p>Returns the currently status code for this response. If no status code has been set, a BadMethodCallException
-will be thrown.:</p>
+will be thrown:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">statusCode</span><span class="p">();</span>
 </pre></div>
 </div>
@@ -659,7 +684,7 @@ for a custom status code, you can pass the reason phrase as the second parameter
 </tr>
 </tbody>
 </table>
-<p>Sets the date used for this response. The <code class="docutils literal"><span class="pre">$date</span></code> argument must be an instance of <code class="docutils literal"><span class="pre">DateTime</span></code>.:</p>
+<p>Sets the date used for this response. The <code class="docutils literal"><span class="pre">$date</span></code> argument must be an instance of <code class="docutils literal"><span class="pre">DateTime</span></code>:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$date</span> <span class="o">=</span> <span class="nx">DateTime</span><span class="o">::</span><span class="na">createFromFormat</span><span class="p">(</span><span class="s1">&#39;j-M-Y&#39;</span><span class="p">,</span> <span class="s1">&#39;15-Feb-2016&#39;</span><span class="p">);</span>
 <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setDate</span><span class="p">(</span><span class="nv">$date</span><span class="p">);</span>
 </pre></div>
@@ -687,7 +712,7 @@ for a custom status code, you can pass the reason phrase as the second parameter
 </tr>
 </tbody>
 </table>
-<p>Sets the content type this response represents.:</p>
+<p>Sets the content type this response represents:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setContentType</span><span class="p">(</span><span class="s1">&#39;text/plain&#39;</span><span class="p">);</span>
 <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setContentType</span><span class="p">(</span><span class="s1">&#39;text/html&#39;</span><span class="p">);</span>
 <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setContentType</span><span class="p">(</span><span class="s1">&#39;application/json&#39;</span><span class="p">);</span>
@@ -714,7 +739,7 @@ pass the character set as the second parameter:</p>
 </tbody>
 </table>
 <p>Sets the <code class="docutils literal"><span class="pre">Cache-Control</span></code> header to turn off all HTTP caching. This is the default setting
-of all response messages.:</p>
+of all response messages:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">noCache</span><span class="p">();</span>
 
 <span class="c1">// Sets the following header:</span>

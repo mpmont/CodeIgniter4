@@ -394,7 +394,7 @@ and much, much more.</p>
 <div class="section" id="enabling-kint">
 <h3><a class="toc-backref" href="#id3">Enabling Kint</a><a class="headerlink" href="#enabling-kint" title="Permalink to this headline">¶</a></h3>
 <p>By default, Kint is enabled in <strong>development</strong> and <strong>testing</strong> environments only. This can be altered by modifying
-the <code class="docutils literal"><span class="pre">$useKing</span></code> value in the environment configuration section of the main <strong>index.php</strong> file:</p>
+the <code class="docutils literal"><span class="pre">$useKint</span></code> value in the environment configuration section of the main <strong>index.php</strong> file:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$useKint</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
 </pre></div>
 </div>
@@ -543,7 +543,7 @@ it to sort it correctly and display the correct information. The inner arrays mu
 <li>Implement <code class="docutils literal"><span class="pre">getVarData()</span></code> method.</li>
 </ol>
 <p>The <code class="docutils literal"><span class="pre">getVarData()</span></code> method should return an array containing arrays of key/value pairs to display. The name of the
-outer array&#8217;s key is the name of the section on the Vars tab.:</p>
+outer array&#8217;s key is the name of the section on the Vars tab:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$data</span> <span class="o">=</span> <span class="p">[</span>
         <span class="s1">&#39;section 1&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
             <span class="s1">&#39;foo&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;bar,</span>

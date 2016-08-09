@@ -483,7 +483,7 @@ exactly as you would the <code class="docutils literal"><span class="pre">write(
 <p><strong>wrap()</strong></p>
 <p>This command will take a string, start printing it on the current line, and wrap it to a set length on new lines.
 This might be useful when displaying a list of options with descriptions that you want to wrap in the current
-window and not go off screen.:</p>
+window and not go off screen:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">CLI</span><span class="o">::</span><span class="na">color</span><span class="p">(</span><span class="s2">&quot;task1</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="s1">&#39;yellow&#39;</span><span class="p">);</span>
 <span class="nx">CLI</span><span class="o">::</span><span class="na">wrap</span><span class="p">(</span><span class="s2">&quot;Some long description goes here that might be longer than the current window.&quot;</span><span class="p">);</span>
 </pre></div>
@@ -532,7 +532,7 @@ task1abc   Lorem Ipsum has been the industry&#39;s
 <p><strong>clearScreen()</strong></p>
 <p>You can clear the current terminal window with the <code class="docutils literal"><span class="pre">clearScreen()</span></code> method. In most versions of Windows, this will
 simply insert 40 blank lines since Windows doesn&#8217;t support this feature. Windows 10 bash integration should change
-this.:</p>
+this:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">CLI</span><span class="o">::</span><span class="na">clearScreen</span><span class="p">();</span>
 </pre></div>
 </div>

@@ -406,7 +406,7 @@ likely choosing a JPEG image to return.</p>
 </tr>
 </tbody>
 </table>
-<p>Returns the current message body, if any has been set. If not body exists, returns null.:</p>
+<p>Returns the current message body, if any has been set. If not body exists, returns null:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nv">$message</span><span class="o">-&gt;</span><span class="na">body</span><span class="p">();</span>
 </pre></div>
 </div>
@@ -494,7 +494,7 @@ The preceeding <code class="docutils literal"><span class="pre">HTTP_</span></co
 </tbody>
 </table>
 <p>Allows you to retrieve the current value of a single message header. <code class="docutils literal"><span class="pre">$name</span></code> is the case-insensitive header name.
-While the header is converted internally as described above, you can access the header with any type of case.:</p>
+While the header is converted internally as described above, you can access the header with any type of case:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// These are all the same:</span>
 <span class="nv">$message</span><span class="o">-&gt;</span><span class="na">header</span><span class="p">(</span><span class="s1">&#39;HOST&#39;</span><span class="p">);</span>
 <span class="nv">$message</span><span class="o">-&gt;</span><span class="na">header</span><span class="p">(</span><span class="s1">&#39;Host&#39;</span><span class="p">);</span>
@@ -502,7 +502,7 @@ While the header is converted internally as described above, you can access the 
 </pre></div>
 </div>
 <p>If the header has multiple values, the values will return as an array of values. You can use the <code class="docutils literal"><span class="pre">headerLine()</span></code>
-method to retrieve the values as a string.:</p>
+method to retrieve the values as a string:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nv">$message</span><span class="o">-&gt;</span><span class="na">header</span><span class="p">(</span><span class="s1">&#39;Accept-Language&#39;</span><span class="p">);</span>
 
 <span class="c1">// Outputs something like:</span>
@@ -571,7 +571,7 @@ of the header values when the header has multiple values. The values are appropr
 </table>
 <p>Sets the value of a single header. <code class="docutils literal"><span class="pre">$name</span></code> is the case-insensitive name of the header. If the header
 doesn&#8217;t already exist in the collection, it will be created. The <code class="docutils literal"><span class="pre">$value</span></code> can be either a string
-or an array of strings.:</p>
+or an array of strings:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$message</span><span class="o">-&gt;</span><span class="na">setHeader</span><span class="p">(</span><span class="s1">&#39;Host&#39;</span><span class="p">,</span> <span class="s1">&#39;codeigniter.com&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -668,7 +668,7 @@ are <code class="docutils literal"><span class="pre">1.0</span></code> and <code
 </tr>
 </tbody>
 </table>
-<p>Sets the HTTP protocol version this Message uses. Valid values are <code class="docutils literal"><span class="pre">1.0</span></code> or <code class="docutils literal"><span class="pre">1.1</span></code>.:</p>
+<p>Sets the HTTP protocol version this Message uses. Valid values are <code class="docutils literal"><span class="pre">1.0</span></code> or <code class="docutils literal"><span class="pre">1.1</span></code>:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$message</span><span class="o">-&gt;</span><span class="na">setProtocolVersion</span><span class="p">(</span><span class="s1">&#39;1.1&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -711,7 +711,7 @@ array, with the rest following in descending order of priority. If no match can 
 values and the supported values, the first element of the array will be returned.</p>
 <p>Per the <a class="reference external" href="http://tools.ietf.org/html/rfc7231#section-5.3">RFC</a> the match has the option of returning a
 default value, like this method does, or to return an empty string. If you need to have an exact match and
-would like an empty string returned instead, pass <code class="docutils literal"><span class="pre">true</span></code> as the second parameter.:</p>
+would like an empty string returned instead, pass <code class="docutils literal"><span class="pre">true</span></code> as the second parameter:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// Returns empty string if no match.</span>
 <span class="nv">$imageType</span> <span class="o">=</span> <span class="nv">$message</span><span class="o">-&gt;</span><span class="na">negotiateMedia</span><span class="p">(</span><span class="nv">$supported</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
 </pre></div>
@@ -774,7 +774,7 @@ header string:</p>
 </tbody>
 </table>
 <p>Determines the best match between the application-supported values and the <code class="docutils literal"><span class="pre">Accept-Encoding</span></code> header value.
-If no match is found, will return the first element of the <code class="docutils literal"><span class="pre">$supported</span></code> array.:</p>
+If no match is found, will return the first element of the <code class="docutils literal"><span class="pre">$supported</span></code> array:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$supported</span> <span class="o">=</span> <span class="p">[</span>
         <span class="s1">&#39;gzip&#39;</span><span class="p">,</span>
         <span class="s1">&#39;compress&#39;</span>
@@ -805,7 +805,7 @@ If no match is found, will return the first element of the <code class="docutils
 </tbody>
 </table>
 <p>Determines the best match between the application-supported languages and the <code class="docutils literal"><span class="pre">Accept-Language</span></code> header value.
-If no match is found, will return teh first element of the <code class="docutils literal"><span class="pre">$supported</span></code> array.:</p>
+If no match is found, will return the first element of the <code class="docutils literal"><span class="pre">$supported</span></code> array:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$supported</span> <span class="o">=</span> <span class="p">[</span>
         <span class="s1">&#39;en&#39;</span><span class="p">,</span>
         <span class="s1">&#39;fr&#39;</span><span class="p">,</span>

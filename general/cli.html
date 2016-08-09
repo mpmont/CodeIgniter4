@@ -453,7 +453,7 @@ you with CLI-only tools.</p>
 <p>In your <strong>Routes.php</strong> file you can create routes that are only accessible from
 the CLI as easily as you would create any other route. Instead of using the <code class="docutils literal"><span class="pre">get()</span></code>,
 <code class="docutils literal"><span class="pre">post()</span></code>, or similar method, you would use the <code class="docutils literal"><span class="pre">cli()</span></code> method. Everything else
-works exactly like a normal route definition.:</p>
+works exactly like a normal route definition:</p>
 <div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$routes</span><span class="o">-&gt;</span><span class="na">cli</span><span class="p">(</span><span class="s1">&#39;tools/message/(:segment)&#39;</span><span class="p">,</span> <span class="s1">&#39;Tools::message/$1&#39;</span><span class="p">);</span>
 </pre></div>
 </div>

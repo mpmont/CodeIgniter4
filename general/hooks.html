@@ -92,9 +92,12 @@
 <li class="toctree-l2"><a class="reference internal" href="urls.html">CodeIgniter URLs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="controllers.html">Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="views.html">Views</a></li>
-<li class="toctree-l2"><a class="reference internal" href="helpers.html">Helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="view_cells.html">View Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="view_renderer.html">View Renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="view_parser.html">View Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helpers.html">Helper Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core_classes.html">Creating Core System Classes</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Hooks - Extending the Framework Core</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Hooks - Extending the Framework Core</a></li>
 <li class="toctree-l2"><a class="reference internal" href="common_functions.html">Global Functions and Constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="routing.html">URI Routing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="filters.html">Controller Filters</a></li>
@@ -119,9 +122,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/curlrequest.html">CURLRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/incomingrequest.html">IncomingRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/message.html">HTTP Messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">Pagination</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/request.html">Request Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/response.html">HTTP Responses</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/response.html#class-reference">Class Reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">Security Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">Session Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/uploaded_files.html">Working with Uploaded Files</a></li>
@@ -245,9 +248,12 @@
 <li class="toctree-l2"><a class="reference internal" href="urls.html">CodeIgniter URLs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="controllers.html">Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="views.html">Views</a></li>
-<li class="toctree-l2"><a class="reference internal" href="helpers.html">Helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="view_cells.html">View Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="view_renderer.html">View Renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="view_parser.html">View Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helpers.html">Helper Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core_classes.html">Creating Core System Classes</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Hooks - Extending the Framework Core</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Hooks - Extending the Framework Core</a></li>
 <li class="toctree-l2"><a class="reference internal" href="common_functions.html">Global Functions and Constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="routing.html">URI Routing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="filters.html">Controller Filters</a></li>
@@ -272,9 +278,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/curlrequest.html">CURLRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/incomingrequest.html">IncomingRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/message.html">HTTP Messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">Pagination</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/request.html">Request Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/response.html">HTTP Responses</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/response.html#class-reference">Class Reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">Security Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">Session Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/uploaded_files.html">Working with Uploaded Files</a></li>
@@ -374,17 +380,17 @@ action when that hook is triggered.</p>
 <div class="section" id="defining-a-hook">
 <h2>Defining a Hook<a class="headerlink" href="#defining-a-hook" title="Permalink to this headline">¶</a></h2>
 <p>Most hooks are defined within the <strong>application/Config/Hooks.php</strong> file. You can subscribe an action to a hook with
-the Hooks class&#8217; <tt class="docutils literal"><span class="pre">on()</span></tt> method. The first parameter is the name of the hook to subscribe to. The second parameter is
+the Hooks class&#8217; <code class="docutils literal"><span class="pre">on()</span></code> method. The first parameter is the name of the hook to subscribe to. The second parameter is
 a callable that will be run when that event is triggered.:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">use</span> <span class="nx">CodeIgniter\Hooks\Hooks</span><span class="p">;</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">CodeIgniter\Hooks\Hooks</span><span class="p">;</span>
 
 <span class="nx">Hooks</span><span class="o">::</span><span class="na">on</span><span class="p">(</span><span class="s1">&#39;pre_system&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;MyClass&#39;</span><span class="p">,</span> <span class="s1">&#39;MyFunction&#39;</span><span class="p">]);</span>
 </pre></div>
 </div>
-<p>In this example, whenever the <strong>pre_controller</strong> hook is executed, an instance of <tt class="docutils literal"><span class="pre">MyClass</span></tt> is created and the
-<tt class="docutils literal"><span class="pre">MyFunction</span></tt> method is ran. Note that the second parameter can be <em>any</em> form of
+<p>In this example, whenever the <strong>pre_controller</strong> hook is executed, an instance of <code class="docutils literal"><span class="pre">MyClass</span></code> is created and the
+<code class="docutils literal"><span class="pre">MyFunction</span></code> method is ran. Note that the second parameter can be <em>any</em> form of
 <a class="reference external" href="http://php.net/manual/en/function.is-callable.php">callable</a> that PHP recognizes:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="c1">// Call a standalone function</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// Call a standalone function</span>
 <span class="nx">Hooks</span><span class="o">::</span><span class="na">on</span><span class="p">(</span><span class="s1">&#39;pre_system&#39;</span><span class="p">,</span> <span class="s1">&#39;some_function&#39;</span><span class="p">);</span>
 
 <span class="c1">// Call on an instance method</span>
@@ -404,15 +410,15 @@ a callable that will be run when that event is triggered.:</p>
 <div class="section" id="setting-priorities">
 <h3>Setting Priorities<a class="headerlink" href="#setting-priorities" title="Permalink to this headline">¶</a></h3>
 <p>Since multiple methods can be subscribed to a single event, you will need a way to define in what order those methods
-are called. You can do this by passing a priority value as the third parameter of the <tt class="docutils literal"><span class="pre">on()</span></tt> method. Lower values
+are called. You can do this by passing a priority value as the third parameter of the <code class="docutils literal"><span class="pre">on()</span></code> method. Lower values
 are executed first, with a value of 1 having the highest priority, and there being no limit on the lower values.:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nx">Hooks</span><span class="o">::</span><span class="na">on</span><span class="p">(</span><span class="s1">&#39;post_controller_constructor&#39;</span><span class="p">,</span> <span class="s1">&#39;some_function&#39;</span><span class="p">,</span> <span class="mi">25</span><span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">Hooks</span><span class="o">::</span><span class="na">on</span><span class="p">(</span><span class="s1">&#39;post_controller_constructor&#39;</span><span class="p">,</span> <span class="s1">&#39;some_function&#39;</span><span class="p">,</span> <span class="mi">25</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>Any subscribers with the same priority will be executed in the order they were defined.</p>
 <p>Three constants are defined for your use, that set some helpful ranges on the values. You are not required to use these
 but you might find they aid readability.:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nb">define</span><span class="p">(</span><span class="s1">&#39;HOOKS_PRIORITY_LOW&#39;</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nb">define</span><span class="p">(</span><span class="s1">&#39;HOOKS_PRIORITY_LOW&#39;</span><span class="p">,</span> <span class="mi">200</span><span class="p">);</span>
 <span class="nb">define</span><span class="p">(</span><span class="s1">&#39;HOOKS_PRIORITY_NORMAL&#39;</span><span class="p">,</span> <span class="mi">100</span><span class="p">);</span>
 <span class="nb">define</span><span class="p">(</span><span class="s1">&#39;HOOKS_PRIORITY_HIGH&#39;</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span>
 </pre></div>
@@ -424,13 +430,13 @@ the subscribers will stop.</p>
 <div class="section" id="publishing-your-own-hooks">
 <h2>Publishing your own Hooks<a class="headerlink" href="#publishing-your-own-hooks" title="Permalink to this headline">¶</a></h2>
 <p>The Hooks library makes it simple for you to create hooks into your own code, also. To use this feature, you would simply
-need to call the <tt class="docutils literal"><span class="pre">trigger()</span></tt> method on the <strong>Hooks</strong> class with the name of the hook:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nx">\CodeIgniter\Hooks\Hooks</span><span class="o">::</span><span class="na">trigger</span><span class="p">(</span><span class="s1">&#39;some_hook&#39;</span><span class="p">);</span>
+need to call the <code class="docutils literal"><span class="pre">trigger()</span></code> method on the <strong>Hooks</strong> class with the name of the hook:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">\CodeIgniter\Hooks\Hooks</span><span class="o">::</span><span class="na">trigger</span><span class="p">(</span><span class="s1">&#39;some_hook&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>You can pass any number of arguments to the subscribers by adding them as additional parameters. Subscribers will be
 given the arguments in the same order as defined.:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nx">\CodeIgniter\Hooks\Hooks</span><span class="o">::</span><span class="na">trigger</span><span class="p">(</span><span class="s1">&#39;some_hook&#39;</span><span class="p">,</span> <span class="nv">$foo</span><span class="p">,</span> <span class="nv">$bar</span><span class="p">,</span> <span class="nv">$baz</span><span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nx">\CodeIgniter\Hooks\Hooks</span><span class="o">::</span><span class="na">trigger</span><span class="p">(</span><span class="s1">&#39;some_hook&#39;</span><span class="p">,</span> <span class="nv">$foo</span><span class="p">,</span> <span class="nv">$bar</span><span class="p">,</span> <span class="nv">$baz</span><span class="p">);</span>
 
 <span class="nx">Hooks</span><span class="o">::</span><span class="na">on</span><span class="p">(</span><span class="s1">&#39;some_hook&#39;</span><span class="p">,</span> <span class="k">function</span><span class="p">(</span><span class="nv">$foo</span><span class="p">,</span> <span class="nv">$bar</span><span class="p">,</span> <span class="nv">$baz</span><span class="p">)</span> <span class="p">{</span>
         <span class="o">...</span>
@@ -446,7 +452,7 @@ given the arguments in the same order as defined.:</p>
 <li><strong>post_controller_constructor</strong> Called immediately after your controller is instantiated, but prior to any method calls happening.</li>
 <li><strong>post_system</strong> Called after the final rendered page is sent to the browser, at the end of system execution after the finalized data is sent to the browser.</li>
 </ul>
-<p>Hooks are closely related to <a class="reference internal" href="filters.html"><em>Filters</em></a>, and you should be sure to read up on them.</p>
+<p>Hooks are closely related to <a class="reference internal" href="filters.html"><span class="doc">Filters</span></a>, and you should be sure to read up on them.</p>
 </div>
 </div>
 
@@ -469,7 +475,7 @@ given the arguments in the same order as defined.:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-       Last updated on Jul 20, 2016.
+       Last updated on Aug 09, 2016.
     </p>
   </div>
 

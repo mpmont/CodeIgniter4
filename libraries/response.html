@@ -122,8 +122,9 @@
 <li class="toctree-l2"><a class="reference internal" href="curlrequest.html">CURLRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="incomingrequest.html">IncomingRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="message.html">HTTP Messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pagination.html">Pagination</a></li>
 <li class="toctree-l2"><a class="reference internal" href="request.html">Request Class</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">HTTP Responses</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">HTTP Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="security.html">Security Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sessions.html">Session Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="uploaded_files.html">Working with Uploaded Files</a></li>
@@ -277,8 +278,9 @@
 <li class="toctree-l2"><a class="reference internal" href="curlrequest.html">CURLRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="incomingrequest.html">IncomingRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="message.html">HTTP Messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pagination.html">Pagination</a></li>
 <li class="toctree-l2"><a class="reference internal" href="request.html">Request Class</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">HTTP Responses</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">HTTP Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="security.html">Security Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sessions.html">Session Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="uploaded_files.html">Working with Uploaded Files</a></li>
@@ -363,7 +365,7 @@
             
   <div class="section" id="http-responses">
 <h1><a class="toc-backref" href="#id1">HTTP Responses</a><a class="headerlink" href="#http-responses" title="Permalink to this headline">¶</a></h1>
-<p>The Response class extends the <a class="reference internal" href="message.html"><em>HTTP Message Class</em></a> with methods only appropriate for
+<p>The Response class extends the <a class="reference internal" href="message.html"><span class="doc">HTTP Message Class</span></a> with methods only appropriate for
 a server responding to the client that called it.</p>
 <div class="contents topic" id="page-contents">
 <p class="topic-title first">Page Contents</p>
@@ -391,46 +393,46 @@ a server responding to the client that called it.</p>
 <div class="section" id="working-with-the-response">
 <h2><a class="toc-backref" href="#id2">Working with the Response</a><a class="headerlink" href="#working-with-the-response" title="Permalink to this headline">¶</a></h2>
 <p>A Response class is instantiated for you and passed into your controllers. It can be accessed through
-<tt class="docutils literal"><span class="pre">$this-&gt;response</span></tt>. Many times you will not need to touch the class directly, since CodeIgniter takes care of
+<code class="docutils literal"><span class="pre">$this-&gt;response</span></code>. Many times you will not need to touch the class directly, since CodeIgniter takes care of
 sending the headers and the body for you. This is great if the page successfully created the content it was asked to.
 When things go wrong, or you need to send very specific status codes back, or even take advantage of the
 powerful HTTP caching, it&#8217;s there for you.</p>
 <div class="section" id="setting-the-output">
 <h3><a class="toc-backref" href="#id3">Setting the Output</a><a class="headerlink" href="#setting-the-output" title="Permalink to this headline">¶</a></h3>
 <p>When you need to set the output of the script directly, and not rely on CodeIgniter to automatically get it, you
-do it manually with the <tt class="docutils literal"><span class="pre">setBody</span></tt> method. This is usually used in conjuction with setting the status code of
+do it manually with the <code class="docutils literal"><span class="pre">setBody</span></code> method. This is usually used in conjuction with setting the status code of
 the response:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">response</span><span class="o">-&gt;</span><span class="na">setStatusCode</span><span class="p">(</span><span class="mi">404</span><span class="p">)</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">response</span><span class="o">-&gt;</span><span class="na">setStatusCode</span><span class="p">(</span><span class="mi">404</span><span class="p">)</span>
                <span class="o">-&gt;</span><span class="na">setBody</span><span class="p">(</span><span class="nv">$body</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>The reason phrase (&#8216;OK&#8217;, &#8216;Created&#8217;, &#8216;Moved Permenantly&#8217;) will be automatically added, but you can add custom reasons
-as the second parameter of the <tt class="docutils literal"><span class="pre">setStatusCode()</span></tt> method:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">response</span><span class="o">-&gt;</span><span class="na">setStatusCode</span><span class="p">(</span><span class="mi">404</span><span class="p">,</span> <span class="s1">&#39;Nope. Not here.&#39;</span><span class="p">);</span>
+as the second parameter of the <code class="docutils literal"><span class="pre">setStatusCode()</span></code> method:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">response</span><span class="o">-&gt;</span><span class="na">setStatusCode</span><span class="p">(</span><span class="mi">404</span><span class="p">,</span> <span class="s1">&#39;Nope. Not here.&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
 <div class="section" id="setting-headers">
 <h3><a class="toc-backref" href="#id4">Setting Headers</a><a class="headerlink" href="#setting-headers" title="Permalink to this headline">¶</a></h3>
 <p>Often, you will need to set headers to be set for the response. The Response class makes this very simple to do,
-with the <tt class="docutils literal"><span class="pre">setHeader()</span></tt> method. The first parameter is the name of the header. The second parameter is the value,
+with the <code class="docutils literal"><span class="pre">setHeader()</span></code> method. The first parameter is the name of the header. The second parameter is the value,
 which can be either a string or an array of values that will be combined correctly when sent to the client.
 Using these functions instead of using the native PHP functions allows you to ensure that no headers are sent
 prematurely, causing errors, and makes testing possible.</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setHeader</span><span class="p">(</span><span class="s1">&#39;Location&#39;</span><span class="p">,</span> <span class="s1">&#39;http://example.com&#39;</span><span class="p">)</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setHeader</span><span class="p">(</span><span class="s1">&#39;Location&#39;</span><span class="p">,</span> <span class="s1">&#39;http://example.com&#39;</span><span class="p">)</span>
                  <span class="o">-&gt;</span><span class="na">setHeader</span><span class="p">(</span><span class="s1">&#39;WWW-Authenticate&#39;</span><span class="p">,</span> <span class="s1">&#39;Negotiate&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>If the header exists and can have more than one value, you may use the <tt class="docutils literal"><span class="pre">appendHeader()</span></tt> and <tt class="docutils literal"><span class="pre">prependHeader()</span></tt>
+<p>If the header exists and can have more than one value, you may use the <code class="docutils literal"><span class="pre">appendHeader()</span></code> and <code class="docutils literal"><span class="pre">prependHeader()</span></code>
 methods to add the value to the end or beginning of the values list, respectively. The first parameter is the name
 of the header, while the second is the value to append or prepend.</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setHeader</span><span class="p">(</span><span class="s1">&#39;Cache-Control&#39;</span><span class="p">,</span> <span class="s1">&#39;no-cache&#39;</span><span class="p">)</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setHeader</span><span class="p">(</span><span class="s1">&#39;Cache-Control&#39;</span><span class="p">,</span> <span class="s1">&#39;no-cache&#39;</span><span class="p">)</span>
                 <span class="o">-&gt;</span><span class="na">appendHeader</span><span class="p">(</span><span class="s1">&#39;Cache-Control&#39;</span><span class="p">,</span> <span class="s1">&#39;must-revalidate&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>Headers can be removed from the response with the <tt class="docutils literal"><span class="pre">removeHeader()</span></tt> method, which takes the header name as the only
+<p>Headers can be removed from the response with the <code class="docutils literal"><span class="pre">removeHeader()</span></code> method, which takes the header name as the only
 parameter. This is not case-sensitive.</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">removeHeader</span><span class="p">(</span><span class="s1">&#39;Location&#39;</span><span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">removeHeader</span><span class="p">(</span><span class="s1">&#39;Location&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </div>
@@ -440,14 +442,14 @@ parameter. This is not case-sensitive.</p>
 <p>Built into the HTTP specification are tools help the client (often the web browser) cache the results. Used correctly,
 this can lend a huge performance boost to your application because it will tell the client that they don&#8217;t need
 to contact the getServer at all since nothing has changed. And you can&#8217;t get faster than that.</p>
-<p>This are handled through the <tt class="docutils literal"><span class="pre">Cache-Control</span></tt> and <tt class="docutils literal"><span class="pre">ETag</span></tt> headers. This guide is not the proper place for a thorough
+<p>This are handled through the <code class="docutils literal"><span class="pre">Cache-Control</span></code> and <code class="docutils literal"><span class="pre">ETag</span></code> headers. This guide is not the proper place for a thorough
 introduction to all of the cache headers power, but you can get a good understanding over at
 <a class="reference external" href="https://developers.google.com/web/fundamentals/performance/optimizing-content-efficiency/http-caching">Google Developers</a>
 and the <a class="reference external" href="https://www.mobify.com/blog/beginners-guide-to-http-cache-headers/">Mobify Blog</a>.</p>
 <p>By default, all response objects sent through CodeIgniter have HTTP caching turned off. The options and exact
 circumstances are too varied for us to be able to create a good default other than turning it off. It&#8217;s simple
-to set the Cache values to what you need, though, through the <tt class="docutils literal"><span class="pre">setCache()</span></tt> method:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$options</span> <span class="o">=</span> <span class="p">[</span>
+to set the Cache values to what you need, though, through the <code class="docutils literal"><span class="pre">setCache()</span></code> method:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$options</span> <span class="o">=</span> <span class="p">[</span>
         <span class="s1">&#39;max-age&#39;</span>  <span class="o">=&gt;</span> <span class="mi">300</span><span class="p">,</span>
     <span class="s1">&#39;s-maxage&#39;</span> <span class="o">=&gt;</span> <span class="mi">900</span>
     <span class="s1">&#39;etag&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;abcde&#39;</span><span class="p">,</span>
@@ -455,17 +457,17 @@ to set the Cache values to what you need, though, through the <tt class="docutil
 <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">response</span><span class="o">-&gt;</span><span class="na">setCache</span><span class="p">(</span><span class="nv">$options</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>The <tt class="docutils literal"><span class="pre">$options</span></tt> array simply takes an array of key/value pairs that are, with a couple of exceptions, assigned
-to the <tt class="docutils literal"><span class="pre">Cache-Control</span></tt> header. You are free to set all of the options exactly as you need for you specific
-situation. While most of the options are applied to the <tt class="docutils literal"><span class="pre">Cache-Control</span></tt> header, it intelligently handles
-the <tt class="docutils literal"><span class="pre">etag</span></tt> and <tt class="docutils literal"><span class="pre">last-modified</span></tt> options to their appropriate header.</p>
+<p>The <code class="docutils literal"><span class="pre">$options</span></code> array simply takes an array of key/value pairs that are, with a couple of exceptions, assigned
+to the <code class="docutils literal"><span class="pre">Cache-Control</span></code> header. You are free to set all of the options exactly as you need for you specific
+situation. While most of the options are applied to the <code class="docutils literal"><span class="pre">Cache-Control</span></code> header, it intelligently handles
+the <code class="docutils literal"><span class="pre">etag</span></code> and <code class="docutils literal"><span class="pre">last-modified</span></code> options to their appropriate header.</p>
 </div>
 <div class="section" id="content-security-policy">
 <h2><a class="toc-backref" href="#id6">Content Security Policy</a><a class="headerlink" href="#content-security-policy" title="Permalink to this headline">¶</a></h2>
 <p>One of the best protections you have against XSS attacks is to implement a Content Security Policy on the site.
 This forces you to whitelist every single source of content that is pulled in from your site&#8217;s HTML,
 including images, stylesheets, javascript files, etc. The browser will refuse content from sources that don&#8217;t meet
-the whitelist. This whitelist is created within the response&#8217;s <tt class="docutils literal"><span class="pre">Content-Security-Policy</span></tt> header and has many
+the whitelist. This whitelist is created within the response&#8217;s <code class="docutils literal"><span class="pre">Content-Security-Policy</span></code> header and has many
 different ways it can be configured.</p>
 <p>This sounds complex, and on some sites, can definitely be challenging. For many simple sites, though, where all content
 is served by the same domain (<a class="reference external" href="http://example.com">http://example.com</a>), it is very simple to integrate.</p>
@@ -479,20 +481,20 @@ visit the following sites:</p>
 </ul>
 <div class="section" id="turning-csp-on">
 <h3><a class="toc-backref" href="#id7">Turning CSP On</a><a class="headerlink" href="#turning-csp-on" title="Permalink to this headline">¶</a></h3>
-<p>By default, support for this is off. To enable support in your application, edit the <tt class="docutils literal"><span class="pre">CSPEnabled</span></tt> value in
+<p>By default, support for this is off. To enable support in your application, edit the <code class="docutils literal"><span class="pre">CSPEnabled</span></code> value in
 <strong>application/Config/App.php</strong>:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">public</span> <span class="nv">$CSPEnabled</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nv">$CSPEnabled</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
 </pre></div>
 </div>
-<p>When enabled, the response object will contain an instance of <tt class="docutils literal"><span class="pre">CodeIgniter\HTTP\ContentSecurityPolicy</span></tt>. The
+<p>When enabled, the response object will contain an instance of <code class="docutils literal"><span class="pre">CodeIgniter\HTTP\ContentSecurityPolicy</span></code>. The
 values set in <strong>application/Config/ContentSecurityPolicy.php</strong> are applied to that instance and, if no changes are
 needed during runtime, then the correctly formatted header is sent and you&#8217;re all done.</p>
 </div>
 <div class="section" id="runtime-configuration">
 <h3><a class="toc-backref" href="#id8">Runtime Configuration</a><a class="headerlink" href="#runtime-configuration" title="Permalink to this headline">¶</a></h3>
-<p>If your application needs to make changes at run-time, you can access the instance at <tt class="docutils literal"><span class="pre">$response-&gt;CSP</span></tt>. The
+<p>If your application needs to make changes at run-time, you can access the instance at <code class="docutils literal"><span class="pre">$response-&gt;CSP</span></code>. The
 class holds a number of methods that map pretty clearly to the appropriate header value that you need to set:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$reportOnly</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$reportOnly</span> <span class="o">=</span> <span class="k">true</span><span class="p">;</span>
 
 <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">CSP</span><span class="o">-&gt;</span><span class="na">reportOnly</span><span class="p">(</span><span class="nv">$reportOnly</span><span class="p">);</span>
 <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">CSP</span><span class="o">-&gt;</span><span class="na">setBaseURI</span><span class="p">(</span><span class="s1">&#39;example.com&#39;</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
@@ -518,10 +520,10 @@ class holds a number of methods that map pretty clearly to the appropriate heade
 <h3><a class="toc-backref" href="#id9">Inline Content</a><a class="headerlink" href="#inline-content" title="Permalink to this headline">¶</a></h3>
 <p>It is possible to set a website to not protect even inline scripts and styles on its own pages, since this might have
 been the result of user-generated content. To protect against this, CSP allows you to specify a nonce within the
-<tt class="docutils literal"><span class="pre">&lt;style&gt;</span></tt> and <tt class="docutils literal"><span class="pre">&lt;script&gt;</span></tt> tags, and to add those values to the response&#8217;s header. This is a pain to handle in real
-life, and is most secure when generated on the fly. To make this simple, you can include a <tt class="docutils literal"><span class="pre">{csp-style-nonce}</span></tt> or
-<tt class="docutils literal"><span class="pre">{csp-script-nonce}</span></tt> placeholder in the tag and it will be handled for you automatically:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="c1">// Original</span>
+<code class="docutils literal"><span class="pre">&lt;style&gt;</span></code> and <code class="docutils literal"><span class="pre">&lt;script&gt;</span></code> tags, and to add those values to the response&#8217;s header. This is a pain to handle in real
+life, and is most secure when generated on the fly. To make this simple, you can include a <code class="docutils literal"><span class="pre">{csp-style-nonce}</span></code> or
+<code class="docutils literal"><span class="pre">{csp-script-nonce}</span></code> placeholder in the tag and it will be handled for you automatically:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// Original</span>
 <span class="o">&lt;</span><span class="nx">script</span> <span class="p">{</span><span class="nx">csp</span><span class="o">-</span><span class="nx">script</span><span class="o">-</span><span class="nx">nonce</span><span class="p">}</span><span class="o">&gt;</span>
     <span class="nx">console</span><span class="o">.</span><span class="nb">log</span><span class="p">(</span><span class="s2">&quot;Script won&#39;t run as it doesn&#39;t contain a nonce attribute&quot;</span><span class="p">);</span>
 <span class="o">&lt;/</span><span class="nx">script</span><span class="o">&gt;</span>
@@ -542,33 +544,33 @@ life, and is most secure when generated on the fly. To make this simple, you can
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">In addition to the methods listed here, this class inherits the methods from the
-<a class="reference internal" href="message.html"><em>Message Class</em></a>.</p>
+<a class="reference internal" href="message.html"><span class="doc">Message Class</span></a>.</p>
 </div>
 <p>The methods provided by the parent class that are available are:</p>
 <ul class="simple">
-<li><tt class="xref py py-meth docutils literal"><span class="pre">CodeIgniter\HTTP\Message::body()</span></tt></li>
-<li><tt class="xref py py-meth docutils literal"><span class="pre">CodeIgniter\HTTP\Message::setBody()</span></tt></li>
-<li><tt class="xref py py-meth docutils literal"><span class="pre">CodeIgniter\HTTP\Message::populateHeaders()</span></tt></li>
-<li><tt class="xref py py-meth docutils literal"><span class="pre">CodeIgniter\HTTP\Message::headers()</span></tt></li>
-<li><tt class="xref py py-meth docutils literal"><span class="pre">CodeIgniter\HTTP\Message::header()</span></tt></li>
-<li><tt class="xref py py-meth docutils literal"><span class="pre">CodeIgniter\HTTP\Message::headerLine()</span></tt></li>
-<li><tt class="xref py py-meth docutils literal"><span class="pre">CodeIgniter\HTTP\Message::setHeader()</span></tt></li>
-<li><tt class="xref py py-meth docutils literal"><span class="pre">CodeIgniter\HTTP\Message::removeHeader()</span></tt></li>
-<li><tt class="xref py py-meth docutils literal"><span class="pre">CodeIgniter\HTTP\Message::appendHeader()</span></tt></li>
-<li><tt class="xref py py-meth docutils literal"><span class="pre">CodeIgniter\HTTP\Message::protocolVersion()</span></tt></li>
-<li><tt class="xref py py-meth docutils literal"><span class="pre">CodeIgniter\HTTP\Message::setProtocolVersion()</span></tt></li>
-<li><tt class="xref py py-meth docutils literal"><span class="pre">CodeIgniter\HTTP\Message::negotiateMedia()</span></tt></li>
-<li><tt class="xref py py-meth docutils literal"><span class="pre">CodeIgniter\HTTP\Message::negotiateCharset()</span></tt></li>
-<li><tt class="xref py py-meth docutils literal"><span class="pre">CodeIgniter\HTTP\Message::negotiateEncoding()</span></tt></li>
-<li><tt class="xref py py-meth docutils literal"><span class="pre">CodeIgniter\HTTP\Message::negotiateLanguage()</span></tt></li>
-<li><tt class="xref py py-meth docutils literal"><span class="pre">CodeIgniter\HTTP\Message::negotiateLanguage()</span></tt></li>
+<li><code class="xref py py-meth docutils literal"><span class="pre">CodeIgniter\HTTP\Message::body()</span></code></li>
+<li><code class="xref py py-meth docutils literal"><span class="pre">CodeIgniter\HTTP\Message::setBody()</span></code></li>
+<li><code class="xref py py-meth docutils literal"><span class="pre">CodeIgniter\HTTP\Message::populateHeaders()</span></code></li>
+<li><code class="xref py py-meth docutils literal"><span class="pre">CodeIgniter\HTTP\Message::headers()</span></code></li>
+<li><code class="xref py py-meth docutils literal"><span class="pre">CodeIgniter\HTTP\Message::header()</span></code></li>
+<li><code class="xref py py-meth docutils literal"><span class="pre">CodeIgniter\HTTP\Message::headerLine()</span></code></li>
+<li><code class="xref py py-meth docutils literal"><span class="pre">CodeIgniter\HTTP\Message::setHeader()</span></code></li>
+<li><code class="xref py py-meth docutils literal"><span class="pre">CodeIgniter\HTTP\Message::removeHeader()</span></code></li>
+<li><code class="xref py py-meth docutils literal"><span class="pre">CodeIgniter\HTTP\Message::appendHeader()</span></code></li>
+<li><code class="xref py py-meth docutils literal"><span class="pre">CodeIgniter\HTTP\Message::protocolVersion()</span></code></li>
+<li><code class="xref py py-meth docutils literal"><span class="pre">CodeIgniter\HTTP\Message::setProtocolVersion()</span></code></li>
+<li><code class="xref py py-meth docutils literal"><span class="pre">CodeIgniter\HTTP\Message::negotiateMedia()</span></code></li>
+<li><code class="xref py py-meth docutils literal"><span class="pre">CodeIgniter\HTTP\Message::negotiateCharset()</span></code></li>
+<li><code class="xref py py-meth docutils literal"><span class="pre">CodeIgniter\HTTP\Message::negotiateEncoding()</span></code></li>
+<li><code class="xref py py-meth docutils literal"><span class="pre">CodeIgniter\HTTP\Message::negotiateLanguage()</span></code></li>
+<li><code class="xref py py-meth docutils literal"><span class="pre">CodeIgniter\HTTP\Message::negotiateLanguage()</span></code></li>
 </ul>
 <dl class="class">
 <dt>
-<tt class="descname">CodeIgniter\HTTP\Response</tt></dt>
+<code class="descname">CodeIgniter\HTTP\Response</code></dt>
 <dd><dl class="method">
 <dt id="statusCode">
-<tt class="descname">statusCode</tt><big>(</big><big>)</big><a class="headerlink" href="#statusCode" title="Permalink to this definition">¶</a></dt>
+<code class="descname">statusCode</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#statusCode" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -581,14 +583,14 @@ life, and is most secure when generated on the fly. To make this simple, you can
 </table>
 <p>Returns the currently status code for this response. If no status code has been set, a BadMethodCallException
 will be thrown.:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">statusCode</span><span class="p">();</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">statusCode</span><span class="p">();</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="setStatusCode">
-<tt class="descname">setStatusCode</tt><big>(</big><em>$code</em><span class="optional">[</span>, <em>$reason=''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#setStatusCode" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setStatusCode</code><span class="sig-paren">(</span><em>$code</em><span class="optional">[</span>, <em>$reason=''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#setStatusCode" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -608,19 +610,19 @@ will be thrown.:</p>
 </tbody>
 </table>
 <p>Sets the HTTP status code that should be sent with this response:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setStatusCode</span><span class="p">(</span><span class="mi">404</span><span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setStatusCode</span><span class="p">(</span><span class="mi">404</span><span class="p">);</span>
 </pre></div>
 </div>
 <p>The reason phrase will be automatically generated based upon the official lists. If you need to set your own
 for a custom status code, you can pass the reason phrase as the second parameter:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setStatusCode</span><span class="p">(</span><span class="mi">230</span><span class="p">,</span> <span class="s2">&quot;Tardis initiated&quot;</span><span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setStatusCode</span><span class="p">(</span><span class="mi">230</span><span class="p">,</span> <span class="s2">&quot;Tardis initiated&quot;</span><span class="p">);</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="reason">
-<tt class="descname">reason</tt><big>(</big><big>)</big><a class="headerlink" href="#reason" title="Permalink to this definition">¶</a></dt>
+<code class="descname">reason</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#reason" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -632,14 +634,14 @@ for a custom status code, you can pass the reason phrase as the second parameter
 </tbody>
 </table>
 <p>Returns the current status code for this response. If not status has been set, will return an empty string:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">reason</span><span class="p">();</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">reason</span><span class="p">();</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="setDate">
-<tt class="descname">setDate</tt><big>(</big><em>$date</em><big>)</big><a class="headerlink" href="#setDate" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setDate</code><span class="sig-paren">(</span><em>$date</em><span class="sig-paren">)</span><a class="headerlink" href="#setDate" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -657,8 +659,8 @@ for a custom status code, you can pass the reason phrase as the second parameter
 </tr>
 </tbody>
 </table>
-<p>Sets the date used for this response. The <tt class="docutils literal"><span class="pre">$date</span></tt> argument must be an instance of <tt class="docutils literal"><span class="pre">DateTime</span></tt>.:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$date</span> <span class="o">=</span> <span class="nx">DateTime</span><span class="o">::</span><span class="na">createFromFormat</span><span class="p">(</span><span class="s1">&#39;j-M-Y&#39;</span><span class="p">,</span> <span class="s1">&#39;15-Feb-2016&#39;</span><span class="p">);</span>
+<p>Sets the date used for this response. The <code class="docutils literal"><span class="pre">$date</span></code> argument must be an instance of <code class="docutils literal"><span class="pre">DateTime</span></code>.:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$date</span> <span class="o">=</span> <span class="nx">DateTime</span><span class="o">::</span><span class="na">createFromFormat</span><span class="p">(</span><span class="s1">&#39;j-M-Y&#39;</span><span class="p">,</span> <span class="s1">&#39;15-Feb-2016&#39;</span><span class="p">);</span>
 <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setDate</span><span class="p">(</span><span class="nv">$date</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -666,7 +668,7 @@ for a custom status code, you can pass the reason phrase as the second parameter
 
 <dl class="method">
 <dt id="setContentType">
-<tt class="descname">setContentType</tt><big>(</big><em>$mime</em><span class="optional">[</span>, <em>$charset='UTF-8'</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#setContentType" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setContentType</code><span class="sig-paren">(</span><em>$mime</em><span class="optional">[</span>, <em>$charset='UTF-8'</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#setContentType" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -686,21 +688,21 @@ for a custom status code, you can pass the reason phrase as the second parameter
 </tbody>
 </table>
 <p>Sets the content type this response represents.:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setContentType</span><span class="p">(</span><span class="s1">&#39;text/plain&#39;</span><span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setContentType</span><span class="p">(</span><span class="s1">&#39;text/plain&#39;</span><span class="p">);</span>
 <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setContentType</span><span class="p">(</span><span class="s1">&#39;text/html&#39;</span><span class="p">);</span>
 <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setContentType</span><span class="p">(</span><span class="s1">&#39;application/json&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>By default, the method sets the character set to <tt class="docutils literal"><span class="pre">UTF-8</span></tt>. If you need to change this, you can
+<p>By default, the method sets the character set to <code class="docutils literal"><span class="pre">UTF-8</span></code>. If you need to change this, you can
 pass the character set as the second parameter:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setContentType</span><span class="p">(</span><span class="s1">&#39;text/plain&#39;</span><span class="p">,</span> <span class="s1">&#39;x-pig-latin&#39;</span><span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setContentType</span><span class="p">(</span><span class="s1">&#39;text/plain&#39;</span><span class="p">,</span> <span class="s1">&#39;x-pig-latin&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
 </dd></dl>
 
 <dl class="method">
 <dt id="noCache">
-<tt class="descname">noCache</tt><big>(</big><big>)</big><a class="headerlink" href="#noCache" title="Permalink to this definition">¶</a></dt>
+<code class="descname">noCache</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#noCache" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -711,9 +713,9 @@ pass the character set as the second parameter:</p>
 </tr>
 </tbody>
 </table>
-<p>Sets the <tt class="docutils literal"><span class="pre">Cache-Control</span></tt> header to turn off all HTTP caching. This is the default setting
+<p>Sets the <code class="docutils literal"><span class="pre">Cache-Control</span></code> header to turn off all HTTP caching. This is the default setting
 of all response messages.:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">noCache</span><span class="p">();</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">noCache</span><span class="p">();</span>
 
 <span class="c1">// Sets the following header:</span>
     <span class="nx">Cache</span><span class="o">-</span><span class="nx">Control</span><span class="o">:</span> <span class="nx">no</span><span class="o">-</span><span class="nx">store</span><span class="p">,</span> <span class="nb">max</span><span class="o">-</span><span class="nx">age</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="nx">no</span><span class="o">-</span><span class="nx">cache</span>
@@ -723,7 +725,7 @@ of all response messages.:</p>
 
 <dl class="method">
 <dt id="setCache">
-<tt class="descname">setCache</tt><big>(</big><em>$options</em><big>)</big><a class="headerlink" href="#setCache" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setCache</code><span class="sig-paren">(</span><em>$options</em><span class="sig-paren">)</span><a class="headerlink" href="#setCache" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -741,7 +743,7 @@ of all response messages.:</p>
 </tr>
 </tbody>
 </table>
-<p>Sets the <tt class="docutils literal"><span class="pre">Cache-Control</span></tt> headers, including <tt class="docutils literal"><span class="pre">ETags</span></tt> and <tt class="docutils literal"><span class="pre">Last-Modified</span></tt>. Typical keys are:</p>
+<p>Sets the <code class="docutils literal"><span class="pre">Cache-Control</span></code> headers, including <code class="docutils literal"><span class="pre">ETags</span></code> and <code class="docutils literal"><span class="pre">Last-Modified</span></code>. Typical keys are:</p>
 <ul class="simple">
 <li>etag</li>
 <li>last-modified</li>
@@ -758,7 +760,7 @@ of all response messages.:</p>
 
 <dl class="method">
 <dt id="setLastModified">
-<tt class="descname">setLastModified</tt><big>(</big><em>$date</em><big>)</big><a class="headerlink" href="#setLastModified" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setLastModified</code><span class="sig-paren">(</span><em>$date</em><span class="sig-paren">)</span><a class="headerlink" href="#setLastModified" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -776,9 +778,9 @@ of all response messages.:</p>
 </tr>
 </tbody>
 </table>
-<p>Sets the <tt class="docutils literal"><span class="pre">Last-Modified</span></tt> header. The <tt class="docutils literal"><span class="pre">$date</span></tt> object can be either a string or a <tt class="docutils literal"><span class="pre">DateTime</span></tt>
+<p>Sets the <code class="docutils literal"><span class="pre">Last-Modified</span></code> header. The <code class="docutils literal"><span class="pre">$date</span></code> object can be either a string or a <code class="docutils literal"><span class="pre">DateTime</span></code>
 instance:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setLastModified</span><span class="p">(</span><span class="nb">date</span><span class="p">(</span><span class="s1">&#39;D, d M Y H:i:s&#39;</span><span class="p">));</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setLastModified</span><span class="p">(</span><span class="nb">date</span><span class="p">(</span><span class="s1">&#39;D, d M Y H:i:s&#39;</span><span class="p">));</span>
 <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">setLastModified</span><span class="p">(</span><span class="nx">DateTime</span><span class="o">::</span><span class="na">createFromFormat</span><span class="p">(</span><span class="s1">&#39;u&#39;</span><span class="p">,</span> <span class="nv">$time</span><span class="p">));</span>
 </pre></div>
 </div>
@@ -786,7 +788,7 @@ instance:</p>
 
 <dl class="method">
 <dt id="send">
-<tt class="descname">send</tt><big>(</big><big>)</big><a class="headerlink" href="#send" title="Permalink to this definition">¶</a></dt>
+<code class="descname">send</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#send" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -804,7 +806,7 @@ this as it is handled automatically by CodeIgniter.</p>
 
 <dl class="method">
 <dt id="setCookie">
-<tt class="descname">setCookie</tt><big>(</big><em>$name = ''</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$expire = ''</em><span class="optional">[</span>, <em>$domain = ''</em><span class="optional">[</span>, <em>$path = '/'</em><span class="optional">[</span>, <em>$prefix = ''</em><span class="optional">[</span>, <em>$secure = FALSE</em><span class="optional">[</span>, <em>$httponly = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#setCookie" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setCookie</code><span class="sig-paren">(</span><em>$name = ''</em><span class="optional">[</span>, <em>$value = ''</em><span class="optional">[</span>, <em>$expire = ''</em><span class="optional">[</span>, <em>$domain = ''</em><span class="optional">[</span>, <em>$path = '/'</em><span class="optional">[</span>, <em>$prefix = ''</em><span class="optional">[</span>, <em>$secure = FALSE</em><span class="optional">[</span>, <em>$httponly = FALSE</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#setCookie" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -832,7 +834,7 @@ Method, and Discrete Parameters:</p>
 <p><strong>Array Method</strong></p>
 <p>Using this method, an associative array is passed to the first
 parameter:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$cookie</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$cookie</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
         <span class="s1">&#39;name&#39;</span>   <span class="o">=&gt;</span> <span class="s1">&#39;The Cookie Name&#39;</span><span class="p">,</span>
         <span class="s1">&#39;value&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;The Value&#39;</span><span class="p">,</span>
         <span class="s1">&#39;expire&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;86500&#39;</span><span class="p">,</span>
@@ -863,7 +865,7 @@ by setting it to TRUE.</p>
 <p><strong>Discrete Parameters</strong></p>
 <p>If you prefer, you can set the cookie by passing data using individual
 parameters:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">setCookie</span><span class="p">(</span><span class="nv">$name</span><span class="p">,</span> <span class="nv">$value</span><span class="p">,</span> <span class="nv">$expire</span><span class="p">,</span> <span class="nv">$domain</span><span class="p">,</span> <span class="nv">$path</span><span class="p">,</span> <span class="nv">$prefix</span><span class="p">,</span> <span class="nv">$secure</span><span class="p">);</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">setCookie</span><span class="p">(</span><span class="nv">$name</span><span class="p">,</span> <span class="nv">$value</span><span class="p">,</span> <span class="nv">$expire</span><span class="p">,</span> <span class="nv">$domain</span><span class="p">,</span> <span class="nv">$path</span><span class="p">,</span> <span class="nv">$prefix</span><span class="p">,</span> <span class="nv">$secure</span><span class="p">);</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -894,7 +896,7 @@ parameters:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-       Last updated on Jul 22, 2016.
+       Last updated on Aug 09, 2016.
     </p>
   </div>
 

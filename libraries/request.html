@@ -33,7 +33,7 @@
     <link rel="top" title="CodeIgniter4 4.0.0-dev documentation" href="../index.html"/>
         <link rel="up" title="Library Reference" href="index.html"/>
         <link rel="next" title="HTTP Responses" href="response.html"/>
-        <link rel="prev" title="HTTP Messages" href="message.html"/> 
+        <link rel="prev" title="Pagination" href="pagination.html"/> 
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
@@ -92,7 +92,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../general/urls.html">CodeIgniter URLs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/controllers.html">Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/views.html">Views</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../general/helpers.html">Helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/view_cells.html">View Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/view_renderer.html">View Renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/view_parser.html">View Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/helpers.html">Helper Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/core_classes.html">Creating Core System Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/hooks.html">Hooks - Extending the Framework Core</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/common_functions.html">Global Functions and Constants</a></li>
@@ -119,9 +122,9 @@
 <li class="toctree-l2"><a class="reference internal" href="curlrequest.html">CURLRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="incomingrequest.html">IncomingRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="message.html">HTTP Messages</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Request Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pagination.html">Pagination</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Request Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="response.html">HTTP Responses</a></li>
-<li class="toctree-l2"><a class="reference internal" href="response.html#class-reference">Class Reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="security.html">Security Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sessions.html">Session Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="uploaded_files.html">Working with Uploaded Files</a></li>
@@ -149,7 +152,10 @@
 </li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">Helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">Helpers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/url_helper.html">URL Helper</a></li>
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">Contributing to CodeIgniter</a><ul>
@@ -242,7 +248,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../general/urls.html">CodeIgniter URLs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/controllers.html">Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/views.html">Views</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../general/helpers.html">Helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/view_cells.html">View Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/view_renderer.html">View Renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/view_parser.html">View Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/helpers.html">Helper Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/core_classes.html">Creating Core System Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/hooks.html">Hooks - Extending the Framework Core</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/common_functions.html">Global Functions and Constants</a></li>
@@ -269,9 +278,9 @@
 <li class="toctree-l2"><a class="reference internal" href="curlrequest.html">CURLRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="incomingrequest.html">IncomingRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="message.html">HTTP Messages</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Request Class</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pagination.html">Pagination</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Request Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="response.html">HTTP Responses</a></li>
-<li class="toctree-l2"><a class="reference internal" href="response.html#class-reference">Class Reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="security.html">Security Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sessions.html">Session Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="uploaded_files.html">Working with Uploaded Files</a></li>
@@ -299,7 +308,10 @@
 </li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">Helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">Helpers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/url_helper.html">URL Helper</a></li>
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">Contributing to CodeIgniter</a><ul>
@@ -358,16 +370,16 @@ work for both incoming, such as a request to the application from a browser, and
 like would be used to send a request from the application to a third-party application. This class
 provides the common functionality they both need, but both cases have custom classes that extend
 from the Request class to add specific functionality.</p>
-<p>See the documentation for the <a class="reference internal" href="incomingrequest.html"><em>IncomingRequest Class</em></a> and
-<a class="reference internal" href="curlrequest.html"><em>CURLRequest Class</em></a> for more usage details.</p>
+<p>See the documentation for the <a class="reference internal" href="incomingrequest.html"><span class="doc">IncomingRequest Class</span></a> and
+<a class="reference internal" href="curlrequest.html"><span class="doc">CURLRequest Class</span></a> for more usage details.</p>
 <div class="section" id="class-reference">
 <h2>Class Reference<a class="headerlink" href="#class-reference" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt>
-<tt class="descname">CodeIgniter\HTTP\IncomingRequest</tt></dt>
+<code class="descname">CodeIgniter\HTTP\IncomingRequest</code></dt>
 <dd><dl class="method">
 <dt id="ipAddress">
-<tt class="descname">ipAddress</tt><big>(</big><big>)</big><a class="headerlink" href="#ipAddress" title="Permalink to this definition">¶</a></dt>
+<code class="descname">ipAddress</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#ipAddress" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -381,12 +393,12 @@ is not a valid IP addresss, then will return 0.0.0.0</td>
 </table>
 <p>Returns the IP address for the current user. If the IP address is not valid, the method
 will return &#8216;0.0.0.0&#8217;:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">ipAddress</span><span class="p">();</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">ipAddress</span><span class="p">();</span>
 </pre></div>
 </div>
 <div class="admonition important">
 <p class="first admonition-title">Important</p>
-<p class="last">This method takes into account the <tt class="docutils literal"><span class="pre">App-&gt;proxy_ips</span></tt> setting and will
+<p class="last">This method takes into account the <code class="docutils literal"><span class="pre">App-&gt;proxy_ips</span></code> setting and will
 return the reported HTTP_X_FORWARDED_FOR, HTTP_CLIENT_IP, HTTP_X_CLIENT_IP, or
 HTTP_X_CLUSTER_CLIENT_IP address for the allowed IP address.</p>
 </div>
@@ -394,7 +406,7 @@ HTTP_X_CLUSTER_CLIENT_IP address for the allowed IP address.</p>
 
 <dl class="method">
 <dt id="validIP">
-<tt class="descname">validIP</tt><big>(</big><em>$ip</em><span class="optional">[</span>, <em>$which = ''</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#validIP" title="Permalink to this definition">¶</a></dt>
+<code class="descname">validIP</code><span class="sig-paren">(</span><em>$ip</em><span class="optional">[</span>, <em>$which = ''</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#validIP" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -419,7 +431,7 @@ on whether it is valid or not.</p>
 <p class="first admonition-title">Note</p>
 <p class="last">The $request-&gt;ipAddress() method above automatically validates the IP address.</p>
 </div>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">validIP</span><span class="p">(</span><span class="nv">$ip</span><span class="p">))</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span> <span class="o">!</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">validIP</span><span class="p">(</span><span class="nv">$ip</span><span class="p">))</span>
 <span class="p">{</span>
     <span class="k">echo</span> <span class="s1">&#39;Not Valid&#39;</span><span class="p">;</span>
 <span class="p">}</span>
@@ -435,7 +447,7 @@ an IP format. The default checks for both formats.</p>
 
 <dl class="method">
 <dt id="method">
-<tt class="descname">method</tt><big>(</big><span class="optional">[</span><em>$upper = FALSE</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#method" title="Permalink to this definition">¶</a></dt>
+<code class="descname">method</code><span class="sig-paren">(</span><span class="optional">[</span><em>$upper = FALSE</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#method" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -453,9 +465,9 @@ an IP format. The default checks for both formats.</p>
 </tr>
 </tbody>
 </table>
-<p>Returns the <tt class="docutils literal"><span class="pre">$_SERVER['REQUEST_METHOD']</span></tt>, with the option to set it
+<p>Returns the <code class="docutils literal"><span class="pre">$_SERVER['REQUEST_METHOD']</span></code>, with the option to set it
 in uppercase or lowercase.</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">echo</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">method</span><span class="p">(</span><span class="k">TRUE</span><span class="p">);</span> <span class="c1">// Outputs: POST</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">echo</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">method</span><span class="p">(</span><span class="k">TRUE</span><span class="p">);</span> <span class="c1">// Outputs: POST</span>
 <span class="k">echo</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">method</span><span class="p">(</span><span class="k">FALSE</span><span class="p">);</span> <span class="c1">// Outputs: post</span>
 <span class="k">echo</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">method</span><span class="p">();</span> <span class="c1">// Outputs: post</span>
 </pre></div>
@@ -464,7 +476,7 @@ in uppercase or lowercase.</p>
 
 <dl class="method">
 <dt id="getServer">
-<tt class="descname">getServer</tt><big>(</big><em>$index</em><span class="optional">[</span>, <em>$filter = NULL</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#getServer" title="Permalink to this definition">¶</a></dt>
+<code class="descname">getServer</code><span class="sig-paren">(</span><em>$index</em><span class="optional">[</span>, <em>$filter = NULL</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#getServer" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -483,14 +495,14 @@ in uppercase or lowercase.</p>
 </tr>
 </tbody>
 </table>
-<p>This method is identical to the <tt class="docutils literal"><span class="pre">post()</span></tt>, <tt class="docutils literal"><span class="pre">get()</span></tt> and <tt class="docutils literal"><span class="pre">cookie()</span></tt> methods from the
-<a class="reference internal" href="incomingrequest.html"><em>IncomingRequest Class</em></a>, only it fetches getServer data (<tt class="docutils literal"><span class="pre">$_SERVER</span></tt>):</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getServer</span><span class="p">(</span><span class="s1">&#39;some_data&#39;</span><span class="p">);</span>
+<p>This method is identical to the <code class="docutils literal"><span class="pre">post()</span></code>, <code class="docutils literal"><span class="pre">get()</span></code> and <code class="docutils literal"><span class="pre">cookie()</span></code> methods from the
+<a class="reference internal" href="incomingrequest.html"><span class="doc">IncomingRequest Class</span></a>, only it fetches getServer data (<code class="docutils literal"><span class="pre">$_SERVER</span></code>):</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$request</span><span class="o">-&gt;</span><span class="na">getServer</span><span class="p">(</span><span class="s1">&#39;some_data&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<p>To return an array of multiple <tt class="docutils literal"><span class="pre">$_SERVER</span></tt> values, pass all the required keys
+<p>To return an array of multiple <code class="docutils literal"><span class="pre">$_SERVER</span></code> values, pass all the required keys
 as an array.</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$require</span><span class="o">-&gt;</span><span class="na">getServer</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;SERVER_PROTOCOL&#39;</span><span class="p">,</span> <span class="s1">&#39;REQUEST_URI&#39;</span><span class="p">));</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$require</span><span class="o">-&gt;</span><span class="na">getServer</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="s1">&#39;SERVER_PROTOCOL&#39;</span><span class="p">,</span> <span class="s1">&#39;REQUEST_URI&#39;</span><span class="p">));</span>
 </pre></div>
 </div>
 </dd></dl>
@@ -509,7 +521,7 @@ as an array.</p>
         <a href="response.html" class="btn btn-neutral float-right" title="HTTP Responses">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="message.html" class="btn btn-neutral" title="HTTP Messages"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="pagination.html" class="btn btn-neutral" title="Pagination"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
@@ -519,7 +531,7 @@ as an array.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-       Last updated on Jul 19, 2016.
+       Last updated on Aug 09, 2016.
     </p>
   </div>
 

@@ -89,7 +89,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../general/urls.html">CodeIgniter URLs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/controllers.html">Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/views.html">Views</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../general/helpers.html">Helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/view_cells.html">View Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/view_renderer.html">View Renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/view_parser.html">View Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/helpers.html">Helper Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/core_classes.html">Creating Core System Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/hooks.html">Hooks - Extending the Framework Core</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/common_functions.html">Global Functions and Constants</a></li>
@@ -116,9 +119,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/curlrequest.html">CURLRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/incomingrequest.html">IncomingRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/message.html">HTTP Messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">Pagination</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/request.html">Request Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/response.html">HTTP Responses</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/response.html#class-reference">Class Reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">Security Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">Session Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/uploaded_files.html">Working with Uploaded Files</a></li>
@@ -146,7 +149,10 @@
 </li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">Helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">Helpers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/url_helper.html">URL Helper</a></li>
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">Contributing to CodeIgniter</a><ul>
@@ -239,7 +245,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../general/urls.html">CodeIgniter URLs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/controllers.html">Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/views.html">Views</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../general/helpers.html">Helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/view_cells.html">View Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/view_renderer.html">View Renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/view_parser.html">View Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/helpers.html">Helper Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/core_classes.html">Creating Core System Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/hooks.html">Hooks - Extending the Framework Core</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/common_functions.html">Global Functions and Constants</a></li>
@@ -266,9 +275,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/curlrequest.html">CURLRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/incomingrequest.html">IncomingRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/message.html">HTTP Messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">Pagination</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/request.html">Request Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/response.html">HTTP Responses</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/response.html#class-reference">Class Reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">Security Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">Session Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/uploaded_files.html">Working with Uploaded Files</a></li>
@@ -296,7 +305,10 @@
 </li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">Helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">Helpers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/url_helper.html">URL Helper</a></li>
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">Contributing to CodeIgniter</a><ul>
@@ -370,11 +382,11 @@ application from the CGI and/or PHP environment, including:</p>
 </ul>
 <dl class="class">
 <dt>
-<tt class="descname">CodeIgniter\HTTP\IncomingRequest</tt></dt>
+<code class="descname">CodeIgniter\HTTP\IncomingRequest</code></dt>
 <dd><p>Implements: CodeIgniterHTTPRequestInterface</p>
 <dl class="method">
 <dt id="__construct">
-<tt class="descname">__construct</tt><big>(</big><em>$config</em><span class="optional">[</span>, <em>$uri</em><span class="optional">[</span>, <em>$body</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#__construct" title="Permalink to this definition">¶</a></dt>
+<code class="descname">__construct</code><span class="sig-paren">(</span><em>$config</em><span class="optional">[</span>, <em>$uri</em><span class="optional">[</span>, <em>$body</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#__construct" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -392,7 +404,7 @@ application from the CGI and/or PHP environment, including:</p>
 
 <dl class="method">
 <dt id="isCLI">
-<tt class="descname">isCLI</tt><big>(</big><big>)</big><a class="headerlink" href="#isCLI" title="Permalink to this definition">¶</a></dt>
+<code class="descname">isCLI</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#isCLI" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -408,7 +420,7 @@ application from the CGI and/or PHP environment, including:</p>
 
 <dl class="method">
 <dt id="isAJAX">
-<tt class="descname">isAJAX</tt><big>(</big><big>)</big><a class="headerlink" href="#isAJAX" title="Permalink to this definition">¶</a></dt>
+<code class="descname">isAJAX</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#isAJAX" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -424,7 +436,7 @@ application from the CGI and/or PHP environment, including:</p>
 
 <dl class="method">
 <dt id="getGet">
-<tt class="descname">getGet</tt><big>(</big><span class="optional">[</span><em>$index</em><span class="optional">[</span>, <em>$filter</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#getGet" title="Permalink to this definition">¶</a></dt>
+<code class="descname">getGet</code><span class="sig-paren">(</span><span class="optional">[</span><em>$index</em><span class="optional">[</span>, <em>$filter</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#getGet" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -442,7 +454,7 @@ application from the CGI and/or PHP environment, including:</p>
 
 <dl class="method">
 <dt id="getPost">
-<tt class="descname">getPost</tt><big>(</big><span class="optional">[</span><em>$index</em><span class="optional">[</span>, <em>$filter</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#getPost" title="Permalink to this definition">¶</a></dt>
+<code class="descname">getPost</code><span class="sig-paren">(</span><span class="optional">[</span><em>$index</em><span class="optional">[</span>, <em>$filter</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#getPost" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -460,7 +472,7 @@ application from the CGI and/or PHP environment, including:</p>
 
 <dl class="method">
 <dt id="getPostGet">
-<tt class="descname">getPostGet</tt><big>(</big><span class="optional">[</span><em>$index</em><span class="optional">[</span>, <em>$filter</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#getPostGet" title="Permalink to this definition">¶</a></dt>
+<code class="descname">getPostGet</code><span class="sig-paren">(</span><span class="optional">[</span><em>$index</em><span class="optional">[</span>, <em>$filter</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#getPostGet" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -478,7 +490,7 @@ application from the CGI and/or PHP environment, including:</p>
 
 <dl class="method">
 <dt id="getGetPost">
-<tt class="descname">getGetPost</tt><big>(</big><span class="optional">[</span><em>$index</em><span class="optional">[</span>, <em>$filter</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#getGetPost" title="Permalink to this definition">¶</a></dt>
+<code class="descname">getGetPost</code><span class="sig-paren">(</span><span class="optional">[</span><em>$index</em><span class="optional">[</span>, <em>$filter</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#getGetPost" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -496,7 +508,7 @@ application from the CGI and/or PHP environment, including:</p>
 
 <dl class="method">
 <dt id="getCookie">
-<tt class="descname">getCookie</tt><big>(</big><span class="optional">[</span><em>$index</em><span class="optional">[</span>, <em>$filter</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#getCookie" title="Permalink to this definition">¶</a></dt>
+<code class="descname">getCookie</code><span class="sig-paren">(</span><span class="optional">[</span><em>$index</em><span class="optional">[</span>, <em>$filter</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#getCookie" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -514,7 +526,7 @@ application from the CGI and/or PHP environment, including:</p>
 
 <dl class="method">
 <dt id="getUserAgent">
-<tt class="descname">getUserAgent</tt><big>(</big><span class="optional">[</span><em>$filter</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#getUserAgent" title="Permalink to this definition">¶</a></dt>
+<code class="descname">getUserAgent</code><span class="sig-paren">(</span><span class="optional">[</span><em>$filter</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#getUserAgent" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -531,7 +543,7 @@ application from the CGI and/or PHP environment, including:</p>
 
 <dl class="method">
 <dt id="setCookie">
-<tt class="descname">setCookie</tt><big>(</big><em>$name</em><span class="optional">[</span>, <em>$value</em><span class="optional">[</span>, <em>$expire</em><span class="optional">[</span>, <em>$domain</em><span class="optional">[</span>, <em>$path</em><span class="optional">[</span>, <em>$prefix</em><span class="optional">[</span>, <em>$secure</em><span class="optional">[</span>, <em>$httponly</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#setCookie" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setCookie</code><span class="sig-paren">(</span><em>$name</em><span class="optional">[</span>, <em>$value</em><span class="optional">[</span>, <em>$expire</em><span class="optional">[</span>, <em>$domain</em><span class="optional">[</span>, <em>$path</em><span class="optional">[</span>, <em>$prefix</em><span class="optional">[</span>, <em>$secure</em><span class="optional">[</span>, <em>$httponly</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#setCookie" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -557,7 +569,7 @@ array in the first parameter containing all the values.</p>
 
 <dl class="method">
 <dt id="isSecure">
-<tt class="descname">isSecure</tt><big>(</big><big>)</big><a class="headerlink" href="#isSecure" title="Permalink to this definition">¶</a></dt>
+<code class="descname">isSecure</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#isSecure" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -574,7 +586,7 @@ a few different methods.</p>
 
 <dl class="method">
 <dt id="getFiles">
-<tt class="descname">getFiles</tt><big>(</big><big>)</big><a class="headerlink" href="#getFiles" title="Permalink to this definition">¶</a></dt>
+<code class="descname">getFiles</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#getFiles" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -591,7 +603,7 @@ request. Each file is represented by an UploadedFile instance.</p>
 
 <dl class="method">
 <dt id="getFile">
-<tt class="descname">getFile</tt><big>(</big><em>string $fileID</em><big>)</big><a class="headerlink" href="#getFile" title="Permalink to this definition">¶</a></dt>
+<code class="descname">getFile</code><span class="sig-paren">(</span><em>string $fileID</em><span class="sig-paren">)</span><a class="headerlink" href="#getFile" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -609,7 +621,7 @@ to upload it.</p>
 
 <dl class="method">
 <dt id="detectPath">
-<tt class="descname">detectPath</tt><big>(</big><em>$protocol</em><big>)</big><a class="headerlink" href="#detectPath" title="Permalink to this definition">¶</a></dt>
+<code class="descname">detectPath</code><span class="sig-paren">(</span><em>$protocol</em><span class="sig-paren">)</span><a class="headerlink" href="#detectPath" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -627,7 +639,7 @@ detect the path portion of the current URI.</p>
 
 <dl class="method">
 <dt id="negotiate">
-<tt class="descname">negotiate</tt><big>(</big><em>string $type array $supported</em><span class="optional">[</span>, <em>bool $strictMatch</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#negotiate" title="Permalink to this definition">¶</a></dt>
+<code class="descname">negotiate</code><span class="sig-paren">(</span><em>string $type array $supported</em><span class="optional">[</span>, <em>bool $strictMatch</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#negotiate" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -647,7 +659,7 @@ for content negotiation.</p>
 
 <dl class="method">
 <dt id="getIPAddress">
-<tt class="descname">getIPAddress</tt><big>(</big><big>)</big><a class="headerlink" href="#getIPAddress" title="Permalink to this definition">¶</a></dt>
+<code class="descname">getIPAddress</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#getIPAddress" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -663,7 +675,7 @@ for content negotiation.</p>
 
 <dl class="method">
 <dt id="isValidIP">
-<tt class="descname">isValidIP</tt><big>(</big><em>string $ip</em><span class="optional">[</span>, <em>string $which</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#isValidIP" title="Permalink to this definition">¶</a></dt>
+<code class="descname">isValidIP</code><span class="sig-paren">(</span><em>string $ip</em><span class="optional">[</span>, <em>string $which</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#isValidIP" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -687,7 +699,7 @@ for content negotiation.</p>
 
 <dl class="method">
 <dt id="getMethod">
-<tt class="descname">getMethod</tt><big>(</big><span class="optional">[</span><em>$upper</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#getMethod" title="Permalink to this definition">¶</a></dt>
+<code class="descname">getMethod</code><span class="sig-paren">(</span><span class="optional">[</span><em>$upper</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#getMethod" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -710,7 +722,7 @@ for content negotiation.</p>
 
 <dl class="method">
 <dt id="getServer">
-<tt class="descname">getServer</tt><big>(</big><span class="optional">[</span><em>$index</em><span class="optional">[</span>, <em>$filter</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#getServer" title="Permalink to this definition">¶</a></dt>
+<code class="descname">getServer</code><span class="sig-paren">(</span><span class="optional">[</span><em>$index</em><span class="optional">[</span>, <em>$filter</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#getServer" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -728,7 +740,7 @@ for content negotiation.</p>
 
 <dl class="method">
 <dt id="getEnv">
-<tt class="descname">getEnv</tt><big>(</big><span class="optional">[</span><em>$index</em><span class="optional">[</span>, <em>$filter</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#getEnv" title="Permalink to this definition">¶</a></dt>
+<code class="descname">getEnv</code><span class="sig-paren">(</span><span class="optional">[</span><em>$index</em><span class="optional">[</span>, <em>$filter</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#getEnv" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -746,13 +758,13 @@ for content negotiation.</p>
 
 <dl class="method">
 <dt id="getBody">
-<tt class="descname">getBody</tt><big>(</big><big>)</big><a class="headerlink" href="#getBody" title="Permalink to this definition">¶</a></dt>
+<code class="descname">getBody</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#getBody" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns the Message&#8217;s body.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="setBody">
-<tt class="descname">setBody</tt><big>(</big><em>&amp;$data</em><big>)</big><a class="headerlink" href="#setBody" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setBody</code><span class="sig-paren">(</span><em>&amp;$data</em><span class="sig-paren">)</span><a class="headerlink" href="#setBody" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -775,13 +787,13 @@ for content negotiation.</p>
 
 <dl class="method">
 <dt id="populateHeaders">
-<tt class="descname">populateHeaders</tt><big>(</big><big>)</big><a class="headerlink" href="#populateHeaders" title="Permalink to this definition">¶</a></dt>
+<code class="descname">populateHeaders</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#populateHeaders" title="Permalink to this definition">¶</a></dt>
 <dd><p>Populates the $headers array with any headers the getServer knows about.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="getHeaders">
-<tt class="descname">getHeaders</tt><big>(</big><big>)</big><a class="headerlink" href="#getHeaders" title="Permalink to this definition">¶</a></dt>
+<code class="descname">getHeaders</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#getHeaders" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -797,7 +809,7 @@ for content negotiation.</p>
 
 <dl class="method">
 <dt id="getHeader">
-<tt class="descname">getHeader</tt><big>(</big><em>$name</em><big>)</big><a class="headerlink" href="#getHeader" title="Permalink to this definition">¶</a></dt>
+<code class="descname">getHeader</code><span class="sig-paren">(</span><em>$name</em><span class="sig-paren">)</span><a class="headerlink" href="#getHeader" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -815,7 +827,7 @@ name exist, then will return an array of header objects.</p>
 
 <dl class="method">
 <dt id="hasHeader">
-<tt class="descname">hasHeader</tt><big>(</big><em>$name</em><big>)</big><a class="headerlink" href="#hasHeader" title="Permalink to this definition">¶</a></dt>
+<code class="descname">hasHeader</code><span class="sig-paren">(</span><em>$name</em><span class="sig-paren">)</span><a class="headerlink" href="#hasHeader" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -838,7 +850,7 @@ name exist, then will return an array of header objects.</p>
 
 <dl class="method">
 <dt id="getHeaderLine">
-<tt class="descname">getHeaderLine</tt><big>(</big><em>string $name</em><big>)</big><a class="headerlink" href="#getHeaderLine" title="Permalink to this definition">¶</a></dt>
+<code class="descname">getHeaderLine</code><span class="sig-paren">(</span><em>string $name</em><span class="sig-paren">)</span><a class="headerlink" href="#getHeaderLine" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -867,7 +879,7 @@ and supply your own delimiter when concatenating.</p>
 
 <dl class="method">
 <dt id="setHeader">
-<tt class="descname">setHeader</tt><big>(</big><em>string $name $value</em><big>)</big><a class="headerlink" href="#setHeader" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setHeader</code><span class="sig-paren">(</span><em>string $name $value</em><span class="sig-paren">)</span><a class="headerlink" href="#setHeader" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -891,7 +903,7 @@ and supply your own delimiter when concatenating.</p>
 
 <dl class="method">
 <dt id="removeHeader">
-<tt class="descname">removeHeader</tt><big>(</big><em>string $name</em><big>)</big><a class="headerlink" href="#removeHeader" title="Permalink to this definition">¶</a></dt>
+<code class="descname">removeHeader</code><span class="sig-paren">(</span><em>string $name</em><span class="sig-paren">)</span><a class="headerlink" href="#removeHeader" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -914,7 +926,7 @@ and supply your own delimiter when concatenating.</p>
 
 <dl class="method">
 <dt id="appendHeader">
-<tt class="descname">appendHeader</tt><big>(</big><em>string $name $value</em><big>)</big><a class="headerlink" href="#appendHeader" title="Permalink to this definition">¶</a></dt>
+<code class="descname">appendHeader</code><span class="sig-paren">(</span><em>string $name $value</em><span class="sig-paren">)</span><a class="headerlink" href="#appendHeader" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -939,7 +951,7 @@ multiple values (i.e. are an array or implement ArrayAccess)</p>
 
 <dl class="method">
 <dt id="prependHeader">
-<tt class="descname">prependHeader</tt><big>(</big><em>string $name $value</em><big>)</big><a class="headerlink" href="#prependHeader" title="Permalink to this definition">¶</a></dt>
+<code class="descname">prependHeader</code><span class="sig-paren">(</span><em>string $name $value</em><span class="sig-paren">)</span><a class="headerlink" href="#prependHeader" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -964,7 +976,7 @@ multiple values (i.e. are an array or implement ArrayAccess)</p>
 
 <dl class="method">
 <dt id="getProtocolVersion">
-<tt class="descname">getProtocolVersion</tt><big>(</big><big>)</big><a class="headerlink" href="#getProtocolVersion" title="Permalink to this definition">¶</a></dt>
+<code class="descname">getProtocolVersion</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#getProtocolVersion" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -980,7 +992,7 @@ multiple values (i.e. are an array or implement ArrayAccess)</p>
 
 <dl class="method">
 <dt id="setProtocolVersion">
-<tt class="descname">setProtocolVersion</tt><big>(</big><em>string $version</em><big>)</big><a class="headerlink" href="#setProtocolVersion" title="Permalink to this definition">¶</a></dt>
+<code class="descname">setProtocolVersion</code><span class="sig-paren">(</span><em>string $version</em><span class="sig-paren">)</span><a class="headerlink" href="#setProtocolVersion" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -1015,7 +1027,7 @@ multiple values (i.e. are an array or implement ArrayAccess)</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-       Last updated on Jul 19, 2016.
+       Last updated on Aug 09, 2016.
     </p>
   </div>
 

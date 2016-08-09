@@ -92,12 +92,15 @@
 <li class="toctree-l2"><a class="reference internal" href="urls.html">CodeIgniter URLs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="controllers.html">Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="views.html">Views</a></li>
-<li class="toctree-l2"><a class="reference internal" href="helpers.html">Helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="view_cells.html">View Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="view_renderer.html">View Renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="view_parser.html">View Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helpers.html">Helper Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core_classes.html">Creating Core System Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hooks.html">Hooks - Extending the Framework Core</a></li>
 <li class="toctree-l2"><a class="reference internal" href="common_functions.html">Global Functions and Constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="routing.html">URI Routing</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Controller Filters</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Controller Filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="logging.html">Logging Information</a></li>
 <li class="toctree-l2"><a class="reference internal" href="errors.html">Error Handling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="debugging.html">Debugging Your Application</a></li>
@@ -119,9 +122,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/curlrequest.html">CURLRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/incomingrequest.html">IncomingRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/message.html">HTTP Messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">Pagination</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/request.html">Request Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/response.html">HTTP Responses</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/response.html#class-reference">Class Reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">Security Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">Session Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/uploaded_files.html">Working with Uploaded Files</a></li>
@@ -245,12 +248,15 @@
 <li class="toctree-l2"><a class="reference internal" href="urls.html">CodeIgniter URLs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="controllers.html">Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="views.html">Views</a></li>
-<li class="toctree-l2"><a class="reference internal" href="helpers.html">Helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="view_cells.html">View Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="view_renderer.html">View Renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="view_parser.html">View Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helpers.html">Helper Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core_classes.html">Creating Core System Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hooks.html">Hooks - Extending the Framework Core</a></li>
 <li class="toctree-l2"><a class="reference internal" href="common_functions.html">Global Functions and Constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="routing.html">URI Routing</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Controller Filters</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Controller Filters</a></li>
 <li class="toctree-l2"><a class="reference internal" href="logging.html">Logging Information</a></li>
 <li class="toctree-l2"><a class="reference internal" href="errors.html">Error Handling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="debugging.html">Debugging Your Application</a></li>
@@ -272,9 +278,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/curlrequest.html">CURLRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/incomingrequest.html">IncomingRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/message.html">HTTP Messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">Pagination</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/request.html">Request Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/response.html">HTTP Responses</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/response.html#class-reference">Class Reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">Security Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">Session Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/uploaded_files.html">Working with Uploaded Files</a></li>
@@ -359,7 +365,7 @@
             
   <div class="section" id="controller-filters">
 <h1>Controller Filters<a class="headerlink" href="#controller-filters" title="Permalink to this headline">¶</a></h1>
-<p>Controller Filters allow you to perform actions either before or after the controllers execute. Unlike <a class="reference internal" href="hooks.html"><em>hooks</em></a>,
+<p>Controller Filters allow you to perform actions either before or after the controllers execute. Unlike <a class="reference internal" href="hooks.html"><span class="doc">hooks</span></a>,
 you can very simply choose which URI&#8217;s in your application have the filters applied to them. Incoming filters may
 modify the Request, while after filters can act on and even modify the Response, allowing for a lot of flexibility
 and power. Some common examples of tasks that might be performed with filters are:</p>
@@ -373,10 +379,10 @@ and power. Some common examples of tasks that might be performed with filters ar
 </ul>
 <div class="section" id="creating-a-filter">
 <h2>Creating a Filter<a class="headerlink" href="#creating-a-filter" title="Permalink to this headline">¶</a></h2>
-<p>Filters are simple classes that implement <tt class="docutils literal"><span class="pre">CodeIgniter\Filters\FilterInterface</span></tt>. They contain two methods: <tt class="docutils literal"><span class="pre">before()</span></tt>
-and <tt class="docutils literal"><span class="pre">after()</span></tt>, which contain the code that will be ran before and after the controller, respectively. Your class
+<p>Filters are simple classes that implement <code class="docutils literal"><span class="pre">CodeIgniter\Filters\FilterInterface</span></code>. They contain two methods: <code class="docutils literal"><span class="pre">before()</span></code>
+and <code class="docutils literal"><span class="pre">after()</span></code>, which contain the code that will be ran before and after the controller, respectively. Your class
 must contain both methods, but may leave the methods empty if they are not needed. A skeleton filter class looks like:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">namespace</span> <span class="nx">App\Filters</span><span class="p">;</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="o">&lt;?</span><span class="nx">php</span> <span class="k">namespace</span> <span class="nx">App\Filters</span><span class="p">;</span>
 
 <span class="k">use</span> <span class="nx">CodeIgniter\HTTP\RequestInterface</span><span class="p">;</span>
 <span class="k">use</span> <span class="nx">CodeIgniter\HTTP\ResponseInterface</span><span class="p">;</span>
@@ -400,12 +406,12 @@ must contain both methods, but may leave the methods empty if they are not neede
 </div>
 <div class="section" id="before-filters">
 <h3>Before Filters<a class="headerlink" href="#before-filters" title="Permalink to this headline">¶</a></h3>
-<p>From any filter, you can return the <tt class="docutils literal"><span class="pre">$request</span></tt> object and it will replace the current Request, allowing you
+<p>From any filter, you can return the <code class="docutils literal"><span class="pre">$request</span></code> object and it will replace the current Request, allowing you
 to make changes that will still be present when the controller executes.</p>
 <p>Since before filters are executed prior to your controller being executed, you may at times want to stop the
 actions in the controller from happening. You can do this by passing back anything that is not the request object.
 This is typically used to peform redirects, like in this example:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">public</span> <span class="k">function</span> <span class="nf">before</span><span class="p">(</span><span class="nx">RequestInterface</span> <span class="nv">$request</span><span class="p">)</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="k">function</span> <span class="nf">before</span><span class="p">(</span><span class="nx">RequestInterface</span> <span class="nv">$request</span><span class="p">)</span>
 <span class="p">{</span>
     <span class="nv">$auth</span> <span class="o">=</span> <span class="nx">service</span><span class="p">(</span><span class="s1">&#39;auth&#39;</span><span class="p">);</span>
 
@@ -419,21 +425,21 @@ This is typically used to peform redirects, like in this example:</p>
 </div>
 <div class="section" id="after-filters">
 <h3>After Filters<a class="headerlink" href="#after-filters" title="Permalink to this headline">¶</a></h3>
-<p>After filters are nearly identical to before filters, except that you can only return the <tt class="docutils literal"><span class="pre">$response</span></tt> object,
+<p>After filters are nearly identical to before filters, except that you can only return the <code class="docutils literal"><span class="pre">$response</span></code> object,
 and you cannot stop script execution. This does allow you to modify the final output, or simply do something with
 the final output. This could be used to ensure certain security headers were set the correct way, or to cache
 the final output, or even to filter the final output with a bad words filter.</p>
 <div class="section" id="configuring-filters">
 <h4>Configuring Filters<a class="headerlink" href="#configuring-filters" title="Permalink to this headline">¶</a></h4>
-<p>Once you&#8217;ve created your filters, you need to configure when they get run. This is done in <tt class="docutils literal"><span class="pre">application/Config/Filters.php</span></tt>.
+<p>Once you&#8217;ve created your filters, you need to configure when they get run. This is done in <code class="docutils literal"><span class="pre">application/Config/Filters.php</span></code>.
 This file contains four properties that allow you to configure exactly when the filters run.</p>
 </div>
 </div>
 <div class="section" id="aliases">
 <h3>$aliases<a class="headerlink" href="#aliases" title="Permalink to this headline">¶</a></h3>
-<p>The <tt class="docutils literal"><span class="pre">$aliases</span></tt> array is used to associate a simple name with one or more fully-qualified class names that are the
+<p>The <code class="docutils literal"><span class="pre">$aliases</span></code> array is used to associate a simple name with one or more fully-qualified class names that are the
 filters to run:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">public</span> <span class="nv">$aliases</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nv">$aliases</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;csrf&#39;</span> <span class="o">=&gt;</span> <span class="nx">\App\Filters\CSRF</span><span class="o">::</span><span class="na">class</span>
 <span class="p">];</span>
 </pre></div>
@@ -442,7 +448,7 @@ filters to run:</p>
 in this way makes it simple to switch out the class used. Great for when you decided you need to change to a
 different authentication system since you only change the filter&#8217;s class and you&#8217;re done.</p>
 <p>You can combine multiple filters into one alias, making complex sets of filters simple to apply:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">public</span> <span class="nv">$aliases</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nv">$aliases</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;apiPrep&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
         <span class="nx">\App\Filters\Negotiate</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
         <span class="nx">\App\Filters\ApiAuth</span><span class="o">::</span><span class="na">class</span>
@@ -457,7 +463,7 @@ different authentication system since you only change the filter&#8217;s class a
 <p>The second section allows you to define any filters that should be applied to every request made by the framework.
 You should take care with how many you use here, since it could have performance implications to have too many
 run on every request. Filters can be specified by adding their alias to either the before or after array:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">public</span> <span class="nv">$globals</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nv">$globals</span> <span class="o">=</span> <span class="p">[</span>
             <span class="s1">&#39;before&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
                     <span class="s1">&#39;csrf&#39;</span>
             <span class="p">],</span>
@@ -469,7 +475,7 @@ run on every request. Filters can be specified by adding their alias to either t
 One common example is if you need to exclude a few URI&#8217;s from the CSRF protection filter to allow requests from
 third-party websites to hit one or two specific URI&#8217;s, while keeping the rest of them protected. To do this, add
 an array with the &#8216;except&#8217; key and a uri to match as the value alongside the alias:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">public</span> <span class="nv">$globals</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nv">$globals</span> <span class="o">=</span> <span class="p">[</span>
             <span class="s1">&#39;before&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
                     <span class="s1">&#39;csrf&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;except&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;api/*&#39;</span><span class="p">]</span>
             <span class="p">],</span>
@@ -478,10 +484,10 @@ an array with the &#8216;except&#8217; key and a uri to match as the value along
 </pre></div>
 </div>
 <p>Any place you can use a URI in the filter settings, you can use a regular expression or, like in this example, use
-an asterisk for a wildcard that will match all characters after that. In this example, any URL&#8217;s starting with <tt class="docutils literal"><span class="pre">api/</span></tt>
+an asterisk for a wildcard that will match all characters after that. In this example, any URL&#8217;s starting with <code class="docutils literal"><span class="pre">api/</span></code>
 would be exempted from CSRF protection, but the site&#8217;s forms would all be protected. If you need to specify multiple
 URI&#8217;s you can use an array of URI patterns:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">public</span> <span class="nv">$globals</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nv">$globals</span> <span class="o">=</span> <span class="p">[</span>
             <span class="s1">&#39;before&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
                     <span class="s1">&#39;csrf&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;except&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;foo/*&#39;</span><span class="p">,</span> <span class="s1">&#39;bar/*&#39;</span><span class="p">]]</span>
             <span class="p">],</span>
@@ -493,9 +499,9 @@ URI&#8217;s you can use an array of URI patterns:</p>
 <div class="section" id="methods">
 <h3>$methods<a class="headerlink" href="#methods" title="Permalink to this headline">¶</a></h3>
 <p>You can apply filters to all requests of a certain HTTP method, like POST, GET, PUT, etc. In this array, you would
-specify the method name in lowercase. It&#8217;s value would be an array of filters to run. Unlike the <tt class="docutils literal"><span class="pre">$globals</span></tt> or the
-<tt class="docutils literal"><span class="pre">$filters</span></tt> properties, these will only run as before filters:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">public</span> <span class="nv">$methods</span> <span class="o">=</span> <span class="p">[</span>
+specify the method name in lowercase. It&#8217;s value would be an array of filters to run. Unlike the <code class="docutils literal"><span class="pre">$globals</span></code> or the
+<code class="docutils literal"><span class="pre">$filters</span></code> properties, these will only run as before filters:</p>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nv">$methods</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;post&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;foo&#39;</span><span class="p">,</span> <span class="s1">&#39;bar&#39;</span><span class="p">],</span>
     <span class="s1">&#39;get&#39;</span>  <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;baz&#39;</span><span class="p">]</span>
 <span class="p">]</span>
@@ -509,7 +515,7 @@ would apply to every AJAX request.</p>
 <h3>$filters<a class="headerlink" href="#filters" title="Permalink to this headline">¶</a></h3>
 <p>This property is an array of filter aliases. For each alias you can specify before and after arrays that contain
 a list of URI patterns that filter should apply to:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">public</span> <span class="nx">filters</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nx">filters</span> <span class="o">=</span> <span class="p">[</span>
     <span class="s1">&#39;foo&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;before&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;admin/*&#39;</span><span class="p">],</span> <span class="s1">&#39;after&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;users/*&#39;</span><span class="p">]],</span>
     <span class="s1">&#39;bar&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;before&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span><span class="s1">&#39;api/*&#39;</span><span class="p">,</span> <span class="s1">&#39;admin/*&#39;</span><span class="p">]]</span>
 <span class="p">];</span>
@@ -542,7 +548,7 @@ a list of URI patterns that filter should apply to:</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-       Last updated on Jul 20, 2016.
+       Last updated on Aug 09, 2016.
     </p>
   </div>
 

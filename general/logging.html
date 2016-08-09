@@ -92,13 +92,16 @@
 <li class="toctree-l2"><a class="reference internal" href="urls.html">CodeIgniter URLs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="controllers.html">Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="views.html">Views</a></li>
-<li class="toctree-l2"><a class="reference internal" href="helpers.html">Helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="view_cells.html">View Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="view_renderer.html">View Renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="view_parser.html">View Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helpers.html">Helper Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core_classes.html">Creating Core System Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hooks.html">Hooks - Extending the Framework Core</a></li>
 <li class="toctree-l2"><a class="reference internal" href="common_functions.html">Global Functions and Constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="routing.html">URI Routing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="filters.html">Controller Filters</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Logging Information</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Logging Information</a></li>
 <li class="toctree-l2"><a class="reference internal" href="errors.html">Error Handling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="debugging.html">Debugging Your Application</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">Web Page Caching</a></li>
@@ -119,9 +122,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/curlrequest.html">CURLRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/incomingrequest.html">IncomingRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/message.html">HTTP Messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">Pagination</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/request.html">Request Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/response.html">HTTP Responses</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/response.html#class-reference">Class Reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">Security Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">Session Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/uploaded_files.html">Working with Uploaded Files</a></li>
@@ -245,13 +248,16 @@
 <li class="toctree-l2"><a class="reference internal" href="urls.html">CodeIgniter URLs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="controllers.html">Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="views.html">Views</a></li>
-<li class="toctree-l2"><a class="reference internal" href="helpers.html">Helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="view_cells.html">View Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="view_renderer.html">View Renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="view_parser.html">View Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="helpers.html">Helper Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="core_classes.html">Creating Core System Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="hooks.html">Hooks - Extending the Framework Core</a></li>
 <li class="toctree-l2"><a class="reference internal" href="common_functions.html">Global Functions and Constants</a></li>
 <li class="toctree-l2"><a class="reference internal" href="routing.html">URI Routing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="filters.html">Controller Filters</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">Logging Information</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Logging Information</a></li>
 <li class="toctree-l2"><a class="reference internal" href="errors.html">Error Handling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="debugging.html">Debugging Your Application</a></li>
 <li class="toctree-l2"><a class="reference internal" href="caching.html">Web Page Caching</a></li>
@@ -272,9 +278,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/curlrequest.html">CURLRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/incomingrequest.html">IncomingRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/message.html">HTTP Messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">Pagination</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/request.html">Request Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/response.html">HTTP Responses</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/response.html#class-reference">Class Reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">Security Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">Session Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/uploaded_files.html">Working with Uploaded Files</a></li>
@@ -359,10 +365,10 @@
             
   <div class="section" id="logging-information">
 <h1>Logging Information<a class="headerlink" href="#logging-information" title="Permalink to this headline">¶</a></h1>
-<p>You can log information to the local log files by using the <tt class="docutils literal"><span class="pre">log_message()</span></tt> method. You must supply
+<p>You can log information to the local log files by using the <code class="docutils literal"><span class="pre">log_message()</span></code> method. You must supply
 the &#8220;level&#8221; of the error in the first parameter, indicating what type of message it is (debug, error, etc).
 The second parameter is the message itself:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span><span class="nv">$some_var</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span><span class="nv">$some_var</span> <span class="o">==</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
 <span class="p">{</span>
         <span class="nx">log_message</span><span class="p">(</span><span class="s1">&#39;error&#39;</span><span class="p">,</span> <span class="s1">&#39;Some variable did not contain a value.&#39;</span><span class="p">);</span>
 <span class="p">}</span>
@@ -385,20 +391,20 @@ Error Handler, described above.</p>
 <div class="section" id="configuration">
 <h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this headline">¶</a></h2>
 <p>You can modify which levels are actually logged, as well as assign different Loggers to handle different levels, within
-the <tt class="docutils literal"><span class="pre">/application/Config/Logger.php</span></tt> configuration file.</p>
-<p>The <tt class="docutils literal"><span class="pre">threshold</span></tt> value of the config file determines which levels are logged across your application. If any levels
+the <code class="docutils literal"><span class="pre">/application/Config/Logger.php</span></code> configuration file.</p>
+<p>The <code class="docutils literal"><span class="pre">threshold</span></code> value of the config file determines which levels are logged across your application. If any levels
 are requested to be logged by the application, but the threshold doesn&#8217;t allow them to log currently, they will be
 ignored. The simplest method to use is to set this value to the minimum level that you want to have logged. For example,
-if you want to log debug messages, and not information messages, you would set the threshold to <tt class="docutils literal"><span class="pre">5</span></tt>. Any log requests with
+if you want to log debug messages, and not information messages, you would set the threshold to <code class="docutils literal"><span class="pre">5</span></code>. Any log requests with
 a level of 5 or less (which includes runtime errors, system errors, etc) would be logged and info, notices, and warnings
 would be ignored.:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">public</span> <span class="nv">$threshold</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nv">$threshold</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
 </pre></div>
 </div>
 <p>A complete list of levels and their corresponding threshold value is in the configuration file for your reference.</p>
 <p>You can pick and choose the specific levels that you would like logged by assigning an array of log level numbers
 to the threshold value:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="c1">// Log only debug and info type messages</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// Log only debug and info type messages</span>
 <span class="k">public</span> <span class="nv">$threshold</span> <span class="o">=</span> <span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">8</span><span class="p">];</span>
 </pre></div>
 </div>
@@ -413,12 +419,12 @@ recommended method of logging.</li>
 installed in the Chrome web browser, you can use this handler to display the log information in
 Chrome&#8217;s console window.</li>
 </ul>
-<p>The handlers are configured in the main configuration file, in the <tt class="docutils literal"><span class="pre">$handlers</span></tt> property, which is simply
+<p>The handlers are configured in the main configuration file, in the <code class="docutils literal"><span class="pre">$handlers</span></code> property, which is simply
 an array of handlers and their configuration. Each handler is specified with the key being the fully
 name-spaced class name. The value will be an array of varying properties, specific to each handler.
-Each handler&#8217;s section will have one property in common: <tt class="docutils literal"><span class="pre">handles</span></tt>, which is an array of log level
+Each handler&#8217;s section will have one property in common: <code class="docutils literal"><span class="pre">handles</span></code>, which is an array of log level
 __names__ that the handler will log information for.</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">public</span> <span class="nv">$handlers</span> <span class="o">=</span> <span class="p">[</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">public</span> <span class="nv">$handlers</span> <span class="o">=</span> <span class="p">[</span>
 
         <span class="c1">//--------------------------------------------------------------------</span>
         <span class="c1">// File Handler</span>
@@ -440,7 +446,7 @@ You might need to log a user id, an IP address, the current POST variables, etc.
 placeholders in your message. Each placeholder must be wrapped in curly braces. In the third parameter,
 you must provide an array of placeholder names (without the braces) and their values. These will be inserted
 into the message string:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="c1">// Generates a message like: User 123 logged into the system from 127.0.0.1</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="c1">// Generates a message like: User 123 logged into the system from 127.0.0.1</span>
 <span class="nv">$info</span> <span class="o">=</span> <span class="p">[</span>
         <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">id</span><span class="p">,</span>
         <span class="s1">&#39;ip_address&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">request</span><span class="o">-&gt;</span><span class="na">ip_address</span><span class="p">()</span>
@@ -452,7 +458,7 @@ into the message string:</p>
 <p>If you want to log an Exception or an Error, you can use the key of &#8216;exception&#8217;, and the value being the
 Exception or Error itself. A string will be generated from that object containing the error message, the
 file name and line number.  You must still provide the exception placeholder in the message:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">try</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">try</span>
 <span class="p">{</span>
         <span class="o">...</span> <span class="nx">Something</span> <span class="nx">throws</span> <span class="nx">error</span> <span class="nx">here</span>
 <span class="p">}</span>
@@ -501,18 +507,18 @@ file name and line number.  You must still provide the exception placeholder in 
 <div class="section" id="using-third-party-loggers">
 <h2>Using Third-Party Loggers<a class="headerlink" href="#using-third-party-loggers" title="Permalink to this headline">¶</a></h2>
 <p>You can use any other logger that you might like as long as it extends from either
-<tt class="docutils literal"><span class="pre">Psr\Log\LoggerInterface</span></tt> and is <a class="reference external" href="http://www.php-fig.org/psr/psr-3/">PSR3</a> compatible. This means
+<code class="docutils literal"><span class="pre">Psr\Log\LoggerInterface</span></code> and is <a class="reference external" href="http://www.php-fig.org/psr/psr-3/">PSR3</a> compatible. This means
 that you can easily drop in use for any PSR3-compatible logger, or create your own.</p>
 <p>You must ensure that the third-party logger can be found by the system, by adding it to either
-the <tt class="docutils literal"><span class="pre">/application/config/autoload.php</span></tt> configuration file, or through another autoloader,
-like Composer. Next, you should modify <tt class="docutils literal"><span class="pre">/application/config/services.php</span></tt> to point the <tt class="docutils literal"><span class="pre">logger</span></tt>
+the <code class="docutils literal"><span class="pre">/application/config/autoload.php</span></code> configuration file, or through another autoloader,
+like Composer. Next, you should modify <code class="docutils literal"><span class="pre">/application/config/services.php</span></code> to point the <code class="docutils literal"><span class="pre">logger</span></code>
 alias to your new class name.</p>
-<p>Now, any call that is done through the <tt class="docutils literal"><span class="pre">log_message()</span></tt> function will use your library instead.</p>
+<p>Now, any call that is done through the <code class="docutils literal"><span class="pre">log_message()</span></code> function will use your library instead.</p>
 </div>
 <div class="section" id="loggeraware-trait">
 <h2>LoggerAware Trait<a class="headerlink" href="#loggeraware-trait" title="Permalink to this headline">¶</a></h2>
 <p>If you would like to implement your libraries in a framework-agnostic method, you can use
-the <tt class="docutils literal"><span class="pre">CodeIgniter\Log\LoggerAwareTrait</span></tt> which implements the <tt class="docutils literal"><span class="pre">setLogger()</span></tt> method for you.
+the <code class="docutils literal"><span class="pre">CodeIgniter\Log\LoggerAwareTrait</span></code> which implements the <code class="docutils literal"><span class="pre">setLogger()</span></code> method for you.
 Then, when you use your library under different environments for frameworks, your library should
 still be able to log as it would expect, as long as it can find a PSR3 compatible logger.</p>
 </div>
@@ -537,7 +543,7 @@ still be able to log as it would expect, as long as it can find a PSR3 compatibl
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-       Last updated on Jul 20, 2016.
+       Last updated on Aug 09, 2016.
     </p>
   </div>
 

@@ -122,6 +122,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/curlrequest.html">CURLRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/incomingrequest.html">IncomingRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/message.html">HTTP Messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">Pagination</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/request.html">Request Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/response.html">HTTP Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">Security Class</a></li>
@@ -164,7 +165,7 @@
 <li class="toctree-l2"><a class="reference internal" href="roadmap.html">CodeIgniter4 Roadmap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="internals.html">CodeIgniter Internals Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="documentation.html">Writing CodeIgniter Documentation</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">PHP Style Guide</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">PHP Style Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../DCO.html">Developer&#8217;s Certificate of Origin 1.1</a></li>
 </ul>
 </li>
@@ -277,6 +278,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/curlrequest.html">CURLRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/incomingrequest.html">IncomingRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/message.html">HTTP Messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">Pagination</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/request.html">Request Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/response.html">HTTP Responses</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">Security Class</a></li>
@@ -319,7 +321,7 @@
 <li class="toctree-l2"><a class="reference internal" href="roadmap.html">CodeIgniter4 Roadmap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="internals.html">CodeIgniter Internals Overview</a></li>
 <li class="toctree-l2"><a class="reference internal" href="documentation.html">Writing CodeIgniter Documentation</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="">PHP Style Guide</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">PHP Style Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../DCO.html">Developer&#8217;s Certificate of Origin 1.1</a></li>
 </ul>
 </li>
@@ -449,7 +451,7 @@ while maintaining consistency of code appearance.</p>
 the following code block would have a single tab at the beginning of
 each line containing braces, and two tabs at the beginning of the
 nested statements. No alignment is implied.:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="nv">$first</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
     <span class="nv">$second</span> <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
     <span class="nv">$third</span> <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
@@ -459,7 +461,7 @@ nested statements. No alignment is implied.:</p>
 <p>Following the &#8220;best practice&#8221; above,
 the following code block would use spaces to have the assignment
 operators line up with each other:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="p">{</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="p">{</span>
     <span class="nv">$first</span>    <span class="o">=</span> <span class="mi">1</span><span class="p">;</span>
     <span class="nv">$second</span>   <span class="o">=</span> <span class="mi">2</span><span class="p">;</span>
     <span class="nv">$third</span>    <span class="o">=</span> <span class="mi">3</span><span class="p">;</span>
@@ -589,7 +591,7 @@ instead of the word versions (<strong>OR</strong> and <strong>AND</strong>).</p>
 </li>
 <li><p class="first">It avoids the problem of the assignment operator (<strong>=</strong>) having
 higher precedence:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="nv">$result</span> <span class="o">=</span> <span class="k">true</span> <span class="o">&amp;&amp;</span> <span class="k">false</span><span class="p">;</span> <span class="c1">// $result is false, expected</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="nv">$result</span> <span class="o">=</span> <span class="k">true</span> <span class="o">&amp;&amp;</span> <span class="k">false</span><span class="p">;</span> <span class="c1">// $result is false, expected</span>
 <span class="nv">$result</span> <span class="o">=</span> <span class="k">true</span> <span class="k">OR</span> <span class="k">false</span><span class="p">;</span> <span class="c1">// $result is true, evaluated as &quot;($result = true) OR false&quot;</span>
 <span class="nv">$result</span> <span class="o">=</span> <span class="p">(</span><span class="k">true</span> <span class="k">OR</span> <span class="k">false</span><span class="p">);</span> <span class="c1">// $result is false</span>
 </pre></div>
@@ -613,7 +615,7 @@ parentheses for clarity, as shown above.</p>
 <strong>while/do</strong> statements, MUST use a brace-surrounded block for their body
 segments.</p>
 <p>Good control structure examples:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span> <span class="nv">$foo</span> <span class="p">)</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span> <span class="nv">$foo</span> <span class="p">)</span>
 <span class="p">{</span>
     <span class="nv">$bar</span> <span class="o">+=</span> <span class="nv">$baz</span><span class="p">;</span>
 <span class="p">}</span>
@@ -624,7 +626,7 @@ segments.</p>
 </pre></div>
 </div>
 <p>Not-acceptable control structures:</p>
-<div class="highlight-ci"><div class="highlight"><pre><span class="k">if</span> <span class="p">(</span> <span class="nv">$foo</span> <span class="p">)</span> <span class="nv">$bar</span> <span class="o">=</span> <span class="nv">$oneThing</span> <span class="o">+</span> <span class="nv">$anotherThing</span> <span class="o">+</span> <span class="nv">$yetAnotherThing</span> <span class="o">+</span> <span class="nv">$evenMore</span><span class="p">;</span>
+<div class="highlight-ci"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="p">(</span> <span class="nv">$foo</span> <span class="p">)</span> <span class="nv">$bar</span> <span class="o">=</span> <span class="nv">$oneThing</span> <span class="o">+</span> <span class="nv">$anotherThing</span> <span class="o">+</span> <span class="nv">$yetAnotherThing</span> <span class="o">+</span> <span class="nv">$evenMore</span><span class="p">;</span>
 
 <span class="k">if</span> <span class="p">(</span> <span class="nv">$foo</span> <span class="p">)</span> <span class="nv">$bar</span> <span class="o">+=</span> <span class="nv">$baz</span><span class="p">;</span>
 <span class="k">else</span> <span class="nv">$baz</span> <span class="o">=</span> <span class="s1">&#39;bar&#39;</span><span class="p">;</span>
@@ -682,7 +684,7 @@ We use &#8220;Allman style&#8221; notation instead.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-       Last updated on Jul 22, 2016.
+       Last updated on Aug 09, 2016.
     </p>
   </div>
 

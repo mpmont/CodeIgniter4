@@ -89,7 +89,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../general/urls.html">CodeIgniter URLs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/controllers.html">Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/views.html">Views</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../general/helpers.html">Helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/view_cells.html">View Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/view_renderer.html">View Renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/view_parser.html">View Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/helpers.html">Helper Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/core_classes.html">Creating Core System Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/hooks.html">Hooks - Extending the Framework Core</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/common_functions.html">Global Functions and Constants</a></li>
@@ -116,9 +119,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/curlrequest.html">CURLRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/incomingrequest.html">IncomingRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/message.html">HTTP Messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">Pagination</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/request.html">Request Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/response.html">HTTP Responses</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/response.html#class-reference">Class Reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">Security Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">Session Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/uploaded_files.html">Working with Uploaded Files</a></li>
@@ -146,7 +149,10 @@
 </li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">Helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">Helpers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/url_helper.html">URL Helper</a></li>
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">Contributing to CodeIgniter</a><ul>
@@ -239,7 +245,10 @@
 <li class="toctree-l2"><a class="reference internal" href="../general/urls.html">CodeIgniter URLs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/controllers.html">Controllers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/views.html">Views</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../general/helpers.html">Helpers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/view_cells.html">View Cells</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/view_renderer.html">View Renderer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/view_parser.html">View Parser</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../general/helpers.html">Helper Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/core_classes.html">Creating Core System Classes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/hooks.html">Hooks - Extending the Framework Core</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../general/common_functions.html">Global Functions and Constants</a></li>
@@ -266,9 +275,9 @@
 <li class="toctree-l2"><a class="reference internal" href="../libraries/curlrequest.html">CURLRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/incomingrequest.html">IncomingRequest Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/message.html">HTTP Messages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../libraries/pagination.html">Pagination</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/request.html">Request Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/response.html">HTTP Responses</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../libraries/response.html#class-reference">Class Reference</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/security.html">Security Class</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/sessions.html">Session Library</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../libraries/uploaded_files.html">Working with Uploaded Files</a></li>
@@ -296,7 +305,10 @@
 </li>
 </ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">Helpers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../helpers/index.html">Helpers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../helpers/url_helper.html">URL Helper</a></li>
+</ul>
+</li>
 </ul>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../contributing/index.html">Contributing to CodeIgniter</a><ul>
@@ -357,16 +369,16 @@ originally made available under.</p>
 <p><a class="reference external" href="http://fuelphp.com">http://fuelphp.com</a></p>
 <dl class="class">
 <dt>
-<tt class="descname">CodeIgniter\CLI\CLI</tt></dt>
+<code class="descname">CodeIgniter\CLI\CLI</code></dt>
 <dd><dl class="method">
 <dt id="init">
-<tt class="descname">init</tt><big>(</big><big>)</big><a class="headerlink" href="#init" title="Permalink to this definition">¶</a></dt>
+<code class="descname">init</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#init" title="Permalink to this definition">¶</a></dt>
 <dd><p>Static &#8220;constructor&#8221;.</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="input">
-<tt class="descname">input</tt><big>(</big><span class="optional">[</span><em>string $prefix</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#input" title="Permalink to this definition">¶</a></dt>
+<code class="descname">input</code><span class="sig-paren">(</span><span class="optional">[</span><em>string $prefix</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#input" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -385,7 +397,7 @@ php index.php user -v &#8211;v -name=John &#8211;name=John</p>
 
 <dl class="method">
 <dt id="prompt">
-<tt class="descname">prompt</tt><big>(</big><big>)</big><a class="headerlink" href="#prompt" title="Permalink to this definition">¶</a></dt>
+<code class="descname">prompt</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#prompt" title="Permalink to this definition">¶</a></dt>
 <dd><p>Asks the user for input.  This can have either 1 or 2 arguments.</p>
 <p>Usage:</p>
 <p>// Waits for any key press
@@ -400,7 +412,7 @@ $ready = CLI::prompt(&#8216;Are you ready?&#8217;, array(&#8216;y&#8217;,&#8217;
 
 <dl class="method">
 <dt id="write">
-<tt class="descname">write</tt><big>(</big><em>string $text</em><span class="optional">[</span>, <em>string $foreground</em><span class="optional">[</span>, <em>string $background</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#write" title="Permalink to this definition">¶</a></dt>
+<code class="descname">write</code><span class="sig-paren">(</span><em>string $text</em><span class="optional">[</span>, <em>string $foreground</em><span class="optional">[</span>, <em>string $background</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#write" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -420,7 +432,7 @@ with a line break.</p>
 
 <dl class="method">
 <dt id="error">
-<tt class="descname">error</tt><big>(</big><em>string $text</em><span class="optional">[</span>, <em>string $foreground</em><span class="optional">[</span>, <em>string $background</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#error" title="Permalink to this definition">¶</a></dt>
+<code class="descname">error</code><span class="sig-paren">(</span><em>string $text</em><span class="optional">[</span>, <em>string $foreground</em><span class="optional">[</span>, <em>string $background</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#error" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -439,7 +451,7 @@ with a line break.</p>
 
 <dl class="method">
 <dt id="beep">
-<tt class="descname">beep</tt><big>(</big><span class="optional">[</span><em>int $num</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#beep" title="Permalink to this definition">¶</a></dt>
+<code class="descname">beep</code><span class="sig-paren">(</span><span class="optional">[</span><em>int $num</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#beep" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -456,7 +468,7 @@ with a line break.</p>
 
 <dl class="method">
 <dt id="wait">
-<tt class="descname">wait</tt><big>(</big><em>int $seconds</em><span class="optional">[</span>, <em>bool $countdown</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#wait" title="Permalink to this definition">¶</a></dt>
+<code class="descname">wait</code><span class="sig-paren">(</span><em>int $seconds</em><span class="optional">[</span>, <em>bool $countdown</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#wait" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -475,13 +487,13 @@ waiting for a key press.</p>
 
 <dl class="method">
 <dt id="isWindows">
-<tt class="descname">isWindows</tt><big>(</big><big>)</big><a class="headerlink" href="#isWindows" title="Permalink to this definition">¶</a></dt>
+<code class="descname">isWindows</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#isWindows" title="Permalink to this definition">¶</a></dt>
 <dd><p>if operating system === windows</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="newLine">
-<tt class="descname">newLine</tt><big>(</big><span class="optional">[</span><em>int $num</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#newLine" title="Permalink to this definition">¶</a></dt>
+<code class="descname">newLine</code><span class="sig-paren">(</span><span class="optional">[</span><em>int $num</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#newLine" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -498,13 +510,13 @@ waiting for a key press.</p>
 
 <dl class="method">
 <dt id="clearScreen">
-<tt class="descname">clearScreen</tt><big>(</big><big>)</big><a class="headerlink" href="#clearScreen" title="Permalink to this definition">¶</a></dt>
+<code class="descname">clearScreen</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#clearScreen" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clears the screen of output</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="color">
-<tt class="descname">color</tt><big>(</big><em>string $text string $foreground</em><span class="optional">[</span>, <em>string $background</em><span class="optional">[</span>, <em>string $format</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#color" title="Permalink to this definition">¶</a></dt>
+<code class="descname">color</code><span class="sig-paren">(</span><em>string $text string $foreground</em><span class="optional">[</span>, <em>string $background</em><span class="optional">[</span>, <em>string $format</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#color" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -525,7 +537,7 @@ optionally a background color.</p>
 
 <dl class="method">
 <dt id="getWidth">
-<tt class="descname">getWidth</tt><big>(</big><span class="optional">[</span><em>int $default</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#getWidth" title="Permalink to this definition">¶</a></dt>
+<code class="descname">getWidth</code><span class="sig-paren">(</span><span class="optional">[</span><em>int $default</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#getWidth" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -544,7 +556,7 @@ for Windows environments.</p>
 
 <dl class="method">
 <dt id="getHeight">
-<tt class="descname">getHeight</tt><big>(</big><span class="optional">[</span><em>int $default</em><span class="optional">]</span><big>)</big><a class="headerlink" href="#getHeight" title="Permalink to this definition">¶</a></dt>
+<code class="descname">getHeight</code><span class="sig-paren">(</span><span class="optional">[</span><em>int $default</em><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#getHeight" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -563,7 +575,7 @@ for Windows environments.</p>
 
 <dl class="method">
 <dt id="showProgress">
-<tt class="descname">showProgress</tt><big>(</big><span class="optional">[</span><em>int $thisStep</em><span class="optional">[</span>, <em>int $totalSteps</em><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#showProgress" title="Permalink to this definition">¶</a></dt>
+<code class="descname">showProgress</code><span class="sig-paren">(</span><span class="optional">[</span><em>int $thisStep</em><span class="optional">[</span>, <em>int $totalSteps</em><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#showProgress" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -582,7 +594,7 @@ to update it. Set $thisStep = false to erase the progress bar.</p>
 
 <dl class="method">
 <dt id="wrap">
-<tt class="descname">wrap</tt><big>(</big><span class="optional">[</span><em>string $string</em><span class="optional">[</span>, <em>int $max</em><span class="optional">[</span>, <em>int $pad_left</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><big>)</big><a class="headerlink" href="#wrap" title="Permalink to this definition">¶</a></dt>
+<code class="descname">wrap</code><span class="sig-paren">(</span><span class="optional">[</span><em>string $string</em><span class="optional">[</span>, <em>int $max</em><span class="optional">[</span>, <em>int $pad_left</em><span class="optional">]</span><span class="optional">]</span><span class="optional">]</span><span class="sig-paren">)</span><a class="headerlink" href="#wrap" title="Permalink to this definition">¶</a></dt>
 <dd><table class="docutils field-list" frame="void" rules="none">
 <col class="field-name" />
 <col class="field-body" />
@@ -618,7 +630,7 @@ short descriptions that need to start on an existing line.</p>
   <div role="contentinfo">
     <p>
         &copy; Copyright 2014 - 2016, British Columbia Institute of Technology.
-       Last updated on Jul 19, 2016.
+       Last updated on Aug 09, 2016.
     </p>
   </div>
 

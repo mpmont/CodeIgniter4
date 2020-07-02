@@ -151,49 +151,9 @@ class GDHandler extends BaseHandler
 	{
 		$srcImg = $this->createImage();
 
-		$width  = $this->image()->origWidth;
-		$height = $this->image()->origHeight;
+		$angle = $direction === 'horizontal' ? IMG_FLIP_HORIZONTAL : IMG_FLIP_VERTICAL;
 
-		if ($direction === 'horizontal')
-		{
-			for ($i = 0; $i < $height; $i ++)
-			{
-				$left  = 0;
-				$right = $width - 1;
-
-				while ($left < $right)
-				{
-					$cl = imagecolorat($srcImg, $left, $i);
-					$cr = imagecolorat($srcImg, $right, $i);
-
-					imagesetpixel($srcImg, $left, $i, $cr);
-					imagesetpixel($srcImg, $right, $i, $cl);
-
-					$left ++;
-					$right --;
-				}
-			}
-		}
-		else
-		{
-			for ($i = 0; $i < $width; $i ++)
-			{
-				$top    = 0;
-				$bottom = $height - 1;
-
-				while ($top < $bottom)
-				{
-					$ct = imagecolorat($srcImg, $i, $top);
-					$cb = imagecolorat($srcImg, $i, $bottom);
-
-					imagesetpixel($srcImg, $i, $top, $cb);
-					imagesetpixel($srcImg, $i, $bottom, $ct);
-
-					$top ++;
-					$bottom --;
-				}
-			}
-		}
+		imageflip($srcImg, $angle);
 
 		$this->resource = $srcImg;
 
@@ -320,6 +280,16 @@ class GDHandler extends BaseHandler
 	{
 		$target = empty($target) ? $this->image()->getPathname() : $target;
 
+		// If no new resource has been created, then we're
+		// simply copy the existing one.
+		if (empty($this->resource))
+		{
+			$name = basename($target);
+			$path = pathinfo($target, PATHINFO_DIRNAME);
+
+			return $this->image()->copy($path, $name);
+		}
+
 		switch ($this->image()->imageType)
 		{
 			case IMAGETYPE_GIF:
@@ -351,6 +321,17 @@ class GDHandler extends BaseHandler
 				}
 
 				if (! @imagepng($this->resource, $target))
+				{
+					throw ImageException::forSaveFailed();
+				}
+				break;
+			case IMAGETYPE_WEBP:
+				if (! function_exists('imagewebp'))
+				{
+					throw ImageException::forInvalidImageCreate(lang('images.webpNotSupported'));
+				}
+
+				if (! @imagewebp($this->resource, $target))
 				{
 					throw ImageException::forSaveFailed();
 				}
@@ -396,6 +377,38 @@ class GDHandler extends BaseHandler
 			$imageType = $this->image()->imageType;
 		}
 
+		return $this->getImageResource($path, $imageType);
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Make the image resource object if needed
+	 */
+	protected function ensureResource()
+	{
+		if ($this->resource === null)
+		{
+			// if valid image type, make corresponding image resource
+			$this->resource = $this->getImageResource(
+				$this->image()->getPathname(), $this->image()->imageType
+			);
+		}
+	}
+
+	//--------------------------------------------------------------------
+
+	/**
+	 * Check if image type is supported and return image resource
+	 *
+	 * @param string  $path      Image path
+	 * @param integer $imageType Image type
+	 *
+	 * @return resource
+	 * @throws type ImageException
+	 */
+	protected function getImageResource(string $path, int $imageType)
+	{
 		switch ($imageType)
 		{
 			case IMAGETYPE_GIF:
@@ -419,6 +432,13 @@ class GDHandler extends BaseHandler
 				}
 
 				return imagecreatefrompng($path);
+			case IMAGETYPE_WEBP:
+				if (! function_exists('imagecreatefromwebp'))
+				{
+					throw ImageException::forInvalidImageCreate(lang('images.webpNotSupported'));
+				}
+
+				return imagecreatefromwebp($path);
 			default:
 				throw ImageException::forInvalidImageCreate('Ima');
 		}

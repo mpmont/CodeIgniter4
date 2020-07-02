@@ -480,6 +480,41 @@ be applied. If you have custom error message that you want to use, place them in
         ];
     }
 
+The other way to set the validation rules to fields by functions,
+
+.. php:function:: setValidationRule($field, $fieldRules)
+
+    :param  string  $field:
+    :param  array   $fieldRules:
+
+    This function will set the field validation rules.
+
+    Usage example::
+
+        $fieldName = 'username';
+        $fieldRules = 'required|alpha_numeric_space|min_length[3]';
+        
+        $model->setValidationRule($fieldName, $fieldRules);
+
+.. php:function:: setValidationRules($validationRules)
+
+    :param  array   $validationRules:
+
+    This function will set the validation rules.
+
+    Usage example::
+
+        $validationRules = [
+            'username' => 'required|alpha_numeric_space|min_length[3]',
+            'email' => [
+                'rules'  => 'required|valid_email|is_unique[users.email]',
+                'errors' => [
+                    'required' => 'We really need your email.',
+                ],
+            ],
+        ];
+        $model->setValidationRules($validationRules);
+
 The other way to set the validation message to fields by functions,
 
 .. php:function:: setValidationMessage($field, $fieldMessages)
@@ -518,7 +553,7 @@ the model will return boolean **false**. You can use the ``errors()`` method to 
 
     if ($model->save($data) === false)
     {
-        return view('updateUser', ['errors' => $model->errors()];
+        return view('updateUser', ['errors' => $model->errors()]);
     }
 
 This returns an array with the field names and their associated errors that can be used to either show all of the

@@ -171,6 +171,9 @@ class Router implements RouterInterface
 				: $this->controller;
 		}
 
+		// Decode URL-encoded string
+		$uri = urldecode($uri);
+
 		if ($this->checkRoutes($uri))
 		{
 			if ($this->collection->isFiltered($this->matchedRoute[0]))
@@ -411,6 +414,8 @@ class Router implements RouterInterface
 				? $key
 				: ltrim($key, '/ ');
 
+			$matchedKey = $key;
+
 			// Are we dealing with a locale?
 			if (strpos($key, '{locale}') !== false)
 			{
@@ -418,16 +423,17 @@ class Router implements RouterInterface
 
 				// Replace it with a regex so it
 				// will actually match.
-				$key = str_replace('{locale}', '[^/]+', $key);
+				$key = str_replace('/', '\/', $key);
+				$key = str_replace('{locale}', '[^\/]+', $key);
 			}
 
 			// Does the RegEx match?
-			if (preg_match('#^' . $key . '$#', $uri, $matches))
+			if (preg_match('#^' . $key . '$#u', $uri, $matches))
 			{
 				// Is this route supposed to redirect to another?
 				if ($this->collection->isRedirect($key))
 				{
-					throw new RedirectException(key($val), $this->collection->getRedirectCode($key));
+					throw new RedirectException(is_array($val) ? key($val) : $val, $this->collection->getRedirectCode($key));
 				}
 				// Store our locale so CodeIgniter object can
 				// assign it to the Request.
@@ -452,11 +458,11 @@ class Router implements RouterInterface
 					$this->params = $matches;
 
 					$this->matchedRoute = [
-						$key,
+						$matchedKey,
 						$val,
 					];
 
-					$this->matchedRouteOptions = $this->collection->getRoutesOptions($key);
+					$this->matchedRouteOptions = $this->collection->getRoutesOptions($matchedKey);
 
 					return true;
 				}
@@ -467,12 +473,12 @@ class Router implements RouterInterface
 				if (strpos($val, '$') !== false && strpos($key, '(') !== false && strpos($key, '/') !== false)
 				{
 					$replacekey = str_replace('/(.*)', '', $key);
-					$val        = preg_replace('#^' . $key . '$#', $val, $uri);
+					$val        = preg_replace('#^' . $key . '$#u', $val, $uri);
 					$val        = str_replace($replacekey, str_replace('/', '\\', $replacekey), $val);
 				}
 				elseif (strpos($val, '$') !== false && strpos($key, '(') !== false)
 				{
-					$val = preg_replace('#^' . $key . '$#', $val, $uri);
+					$val = preg_replace('#^' . $key . '$#u', $val, $uri);
 				}
 				elseif (strpos($val, '/') !== false)
 				{
@@ -490,11 +496,11 @@ class Router implements RouterInterface
 				$this->setRequest(explode('/', $val));
 
 				$this->matchedRoute = [
-					$key,
+					$matchedKey,
 					$val,
 				];
 
-				$this->matchedRouteOptions = $this->collection->getRoutesOptions($key);
+				$this->matchedRouteOptions = $this->collection->getRoutesOptions($matchedKey);
 
 				return true;
 			}
@@ -534,7 +540,7 @@ class Router implements RouterInterface
 		// has already been set.
 		if (! empty($segments))
 		{
-			$this->method = array_shift($segments);
+			$this->method = array_shift($segments) ?: $this->method;
 		}
 
 		if (! empty($segments))

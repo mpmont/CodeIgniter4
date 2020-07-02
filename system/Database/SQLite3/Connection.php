@@ -85,6 +85,11 @@ class Connection extends BaseConnection implements ConnectionInterface
 		}
 		try
 		{
+			if ($this->database !== ':memory:' && strpos($this->database, DIRECTORY_SEPARATOR) === false)
+			{
+				$this->database = WRITEPATH . $this->database;
+			}
+
 			return (! $this->password)
 				? new \SQLite3($this->database)
 				: new \SQLite3($this->database, SQLITE3_OPEN_READWRITE | SQLITE3_OPEN_CREATE, $this->password);
